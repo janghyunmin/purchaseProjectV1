@@ -1,0 +1,3 @@
+# json_key_file("app/api-play-store-key.json") # fastlane
+json_key_file("app/piece-firebase-key.json") # playstore
+package_name("run.piece.dev") # 패키지명

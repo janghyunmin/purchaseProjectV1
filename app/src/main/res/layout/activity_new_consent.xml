@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".refactoring.ui.consent.NewConsentActivity">
+    <data>
+        <import type = "android.view.View" />
+        <variable
+            name="activity"
+            type="run.piece.dev.refactoring.ui.consent.NewConsentActivity" />
+        <variable
+            name="viewModel"
+            type="run.piece.dev.refactoring.ui.consent.NewConsentViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/top_back_iv"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/back_layout"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="4dp"
+            app:layout_constraintTop_toTopOf="@+id/top_back_iv"
+            app:layout_constraintStart_toStartOf="@+id/top_back_iv"
+            app:layout_constraintBottom_toBottomOf="@+id/top_back_iv">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/ic_x24_arrow_left_black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/top_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/more_title_7"
+            android:textColor="@color/g800_4A4D55"
+            android:textSize="16dp"
+            android:lineHeight="25dp"
+            app:fontFamily="@font/pretendard_regular"
+            app:layout_constraintTop_toTopOf="@+id/top_back_iv"
+            app:layout_constraintBottom_toBottomOf="@+id/top_back_iv"
+            app:layout_constraintStart_toStartOf="@+id/top_back_iv"
+            app:layout_constraintEnd_toEndOf="@+id/top_back_iv"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/essential_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="필수 동의"
+            android:layout_marginStart="16dp"
+            android:textColor="@color/g900_292A2E"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/top_back_iv"
+            style="@style/title_1"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/agree_date_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/g600_8C919F"
+            app:layout_constraintStart_toStartOf="@+id/essential_title_tv"
+            app:layout_constraintTop_toBottomOf="@+id/essential_title_tv"
+            style="@style/body_2"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mandatory_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/agree_date_tv" />
+
+        <View
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_marginTop="24dp"
+            android:background="@color/g200_F2F3F4"
+            app:layout_constraintTop_toBottomOf="@+id/mandatory_rv" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/select_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="선택 동의"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="16dp"
+            android:textColor="@color/g900_292A2E"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line1"
+            style="@style/title_1"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/selective_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/select_title_tv" />
+
+        <!--<androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/switch_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/select_title_tv">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/marketing_agree_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/select_agree_txt"
+                android:lineHeight="26dp"
+                android:textSize="16dp"
+                android:textColor="@color/g900_292A2E"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/agree_user_date_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/pretendard_regular"
+                android:textColor="@color/g500_B8BCC8"
+                android:lineHeight="16dp"
+                android:textSize="12dp"
+                android:text=""
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@+id/marketing_agree_tv"
+                app:layout_constraintTop_toBottomOf="@+id/marketing_agree_tv" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/agree_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:onCheckedChanged="@{(view, isChecked) -> activity.onCheckedEvent(view, isChecked)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/switch_layout"
+            app:layout_constraintBottom_toBottomOf="@+id/switch_layout"
+            app:layout_constrainedWidth="true"
+            app:switchMinWidth="24dp"/> -->
+
+        <View
+            android:id="@+id/line2"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/g200_F2F3F4"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@+id/selective_rv" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/consent_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="방침・절차"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="16dp"
+            android:textColor="@color/g900_292A2E"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line2"
+            style="@style/title_1"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/policy_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/consent_title_tv"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

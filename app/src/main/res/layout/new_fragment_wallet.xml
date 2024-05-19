@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="fragment"
+            type="run.piece.dev.refactoring.ui.wallet.NewFragmentWallet" />
+
+        <variable
+            name="depositViewModel"
+            type="run.piece.dev.refactoring.ui.deposit.DepositViewModel" />
+
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/g200_F2F3F4">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/top_iv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/wallet_top_img_x3" />
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/scroll_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/top_title_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/my_deposit_title"
+                        android:textColor="@color/black"
+                        android:paddingStart="16dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        style="@style/display_2"/>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/rotate_layout"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:layout_marginEnd="6dp"
+                        android:orientation="horizontal"
+                        android:padding="10dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/top_title_tv"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/top_title_tv">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/rotate_iv"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center_vertical"
+                            app:srcCompat="@drawable/ic_x24_arrow_rotate" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/deposit_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/trans"
+                        android:paddingBottom="16dp"
+                        app:layout_constraintTop_toBottomOf="@+id/top_title_tv">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/title_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:alpha="0.7"
+                            android:gravity="center"
+                            android:text="@string/my_deposit_title_1"
+                            android:textColor="@color/g900_292A2E"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            style="@style/title_2"/>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/money_layout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/title_tv">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/deposit_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:textColor="@color/g900_292A2E"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                style="@style/display_2"/>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/empty_account_layout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:layout_marginTop="16dp"
+                            android:background="@drawable/layout_round_24dp_ffffff"
+                            android:visibility="visible"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/money_layout">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/empty_status_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:alpha="0.8"
+                                android:gravity="left"
+                                android:text="가상계좌 발급이 필요해요"
+                                android:textColor="@color/g800_4A4D55"
+                                android:visibility="visible"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                style="@style/title_3"/>
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/arrow_iv_1"
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:layout_marginStart="4dp"
+                                android:layout_marginEnd="12dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/empty_status_tv"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@drawable/ic_x16_arrow_right_2" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/account_layout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:layout_marginTop="16dp"
+                            android:background="@drawable/layout_round_24dp_ffffff"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/money_layout">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/bank_icon_iv"
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_marginStart="12dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@drawable/bank03_rec" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/vran_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:alpha="0.8"
+                                android:gravity="left"
+                                android:text="KB국민 ****9012"
+                                android:textColor="@color/g700_757983"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/bank_icon_iv"
+                                app:layout_constraintTop_toTopOf="parent"
+                                style="@style/body_2"/>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/status_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:alpha="0.8"
+                                android:text="연동 중"
+                                android:textColor="@color/g800_4A4D55"
+                                app:layout_constraintBottom_toBottomOf="@id/vran_tv"
+                                app:layout_constraintStart_toEndOf="@+id/vran_tv"
+                                app:layout_constraintTop_toTopOf="@+id/vran_tv"
+                                style="@style/title_3"/>
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/arrow_iv_2"
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:layout_marginStart="4dp"
+                                android:layout_marginEnd="12dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/status_tv"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@drawable/ic_x16_arrow_right_2" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/btn_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/empty_account_layout">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/withdraw_btn"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/wallet_deposit_btn_selector"
+                                android:padding="16dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/charge_btn"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/withdraw_iv"
+                                    android:layout_width="32dp"
+                                    android:layout_height="32dp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:srcCompat="@drawable/ic_x32_coins_arrow_right" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/withdraw_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:text="출금하기"
+                                    android:textColor="@color/g900_292A2E"
+                                    app:layout_constraintEnd_toEndOf="@+id/withdraw_iv"
+                                    app:layout_constraintStart_toStartOf="@+id/withdraw_iv"
+                                    app:layout_constraintTop_toBottomOf="@+id/withdraw_iv"
+                                    style="@style/title_3"/>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/charge_btn"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/wallet_deposit_btn_selector"
+                                android:padding="16dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/history_btn"
+                                app:layout_constraintStart_toEndOf="@+id/withdraw_btn"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/charge_iv"
+                                    android:layout_width="32dp"
+                                    android:layout_height="32dp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:srcCompat="@drawable/ic_x32_download" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/charge_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:text="입금하기"
+                                    android:textColor="@color/g900_292A2E"
+                                    app:layout_constraintEnd_toEndOf="@+id/charge_iv"
+                                    app:layout_constraintStart_toStartOf="@+id/charge_iv"
+                                    app:layout_constraintTop_toBottomOf="@+id/charge_iv"
+                                    style="@style/title_3"/>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/history_btn"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/wallet_deposit_btn_selector"
+                                android:padding="16dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/charge_btn"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/history_iv"
+                                    android:layout_width="32dp"
+                                    android:layout_height="32dp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:srcCompat="@drawable/ic_x32_report" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/history_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:text="거래내역"
+                                    android:textColor="@color/g900_292A2E"
+                                    app:layout_constraintEnd_toEndOf="@+id/history_iv"
+                                    app:layout_constraintStart_toStartOf="@+id/history_iv"
+                                    app:layout_constraintTop_toBottomOf="@+id/history_iv"
+                                    style="@style/title_3"/>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/purchase_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="32dp"
+                        android:text="@string/my_deposit_title_3"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/deposit_layout"
+                        style="@style/title_1"/>
+
+                    <androidx.constraintlayout.widget.Group
+                        android:id="@+id/purchase_item_group"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:constraint_referenced_ids="purchase_item_empty_iv, purchase_item_empty_tv" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/purchase_item_empty_iv"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginTop="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/purchase_title"
+                        app:srcCompat="@drawable/purchase_no_item" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/purchase_item_empty_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/pretendard_regular"
+                        android:lineHeight="25dp"
+                        android:text="투자하신 증권이 없어요."
+                        android:textColor="@color/g600_8C919F"
+                        android:textFontWeight="400"
+                        android:textSize="16dp"
+                        app:layout_constraintEnd_toEndOf="@+id/purchase_item_empty_iv"
+                        app:layout_constraintStart_toStartOf="@+id/purchase_item_empty_iv"
+                        app:layout_constraintTop_toBottomOf="@+id/purchase_item_empty_iv" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/purchase_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="32dp"
+                        android:visibility="gone"
+                        android:background="@color/g200_F2F3F4"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/purchase_title"
+                        app:layout_constraintVertical_bias="0" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/loading_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="piece_loading.json"
+                app:lottie_loop="true" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</layout>

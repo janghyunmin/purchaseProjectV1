@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/parent_layout"
+        android:layout_width="230dp"
+        android:layout_height="344dp"
+        android:layout_marginEnd="16dp"
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/purchase_iv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:tint="#351A1A1A"
+            android:tintMode="src_atop"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/purchase_ids_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            style="@style/text_600_14_18_left"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/purchase_title_tv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/purchase_title_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="12dp"
+            style="@style/text_600_20_26_left"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/purchase_piece_volume_tv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/purchase_iv" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/purchase_at_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            style="@style/text_600_14_18_left"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/purchase_iv"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/piece_icon_iv"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="16dp"
+            android:rotation="90"
+            app:srcCompat="@drawable/ownpiece_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/purchase_piece_volume_tv"
+            app:layout_constraintBottom_toBottomOf="@+id/purchase_piece_volume_tv" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/purchase_piece_volume_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="16dp"
+            style="@style/text_800_20_28_left"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/piece_icon_iv"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/changeReasonIv"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/changeReasonNameTv"
+                style="@style/text_700_16_25_left"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/c_131313"
+                app:layout_constraintEnd_toStartOf="@+id/changeAmountTv"
+                app:layout_constraintBottom_toTopOf="@+id/createdAtTv"
+                app:layout_constraintStart_toEndOf="@+id/changeReasonIv"
+                app:layout_constraintTop_toTopOf="@+id/changeReasonIv" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/createdAtTv"
+                style="@style/text_400_12_16_left"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/c_757983"
+                android:paddingEnd="5dp"
+                app:layout_constraintEnd_toStartOf="@id/remainAmountTv"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/changeReasonIv"
+                app:layout_constraintTop_toBottomOf="@+id/changeReasonNameTv" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/changeAmountTv"
+                style="@style/text_700_16_25_right"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/remainAmountTv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/changeReasonNameTv" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/remainAmountTv"
+                style="@style/text_400_12_16_right"
+                android:layout_width="120dp"
+                android:layout_height="0dp"
+                android:textColor="@color/c_757983"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/changeAmountTv" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

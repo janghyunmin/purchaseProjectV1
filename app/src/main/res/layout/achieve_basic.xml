@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="portfolioViewModel"
+            type="run.piece.dev.refactoring.ui.portfolio.PortfolioNewViewModel" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/achieve_info_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/layout_shadow_1a1a1a_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/touch_layout"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/chart_iv"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintTop_toTopOf="@+id/title_tv"
+                app:layout_constraintBottom_toBottomOf="@+id/sub_title_tv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/ic_x48_chart" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title_tv"
+                android:layout_width="207dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="23dp"
+                android:fontFamily="@font/pretendard_regular"
+                android:gravity="center_vertical"
+                android:lineHeight="22dp"
+                android:text="@string/portfolio_list_chart_title_txt"
+                android:textColor="@color/c_757983"
+                android:textSize="14dp"
+                app:layout_constraintStart_toEndOf="@+id/chart_iv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/sub_title_tv"
+                android:layout_width="207dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/pretendard_semibold"
+                android:gravity="center_vertical"
+                android:lineHeight="20dp"
+                android:text="@string/portfolio_list_chart_sub_title_txt"
+                android:textColor="@color/c_292a2e"
+                android:textSize="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/chart_iv"
+                app:layout_constraintStart_toEndOf="@+id/chart_iv"
+                app:layout_constraintTop_toBottomOf="@+id/title_tv" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/arrow_down_iv"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/sub_title_tv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/title_tv"
+                app:srcCompat="@drawable/ic_x16_arrow_down" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/achieve_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/sub_title_tv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:layout_marginTop="23dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layoutAnimation="@anim/rv_layout_visible"
+                android:visibility="gone"
+                />
+
+            <View
+                android:id="@+id/left_gradient"
+                android:layout_width="32dp"
+                android:layout_height="0dp"
+                android:background="@drawable/linear_right_gradient"
+                app:layout_constraintTop_toTopOf="@+id/achieve_rv"
+                app:layout_constraintBottom_toBottomOf="@+id/achieve_rv"
+                app:layout_constraintStart_toStartOf="@+id/achieve_rv"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/left_arrow"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                app:srcCompat="@drawable/ic_x16_arrow_left"
+                app:layout_constraintTop_toTopOf="@+id/left_gradient"
+                app:layout_constraintBottom_toBottomOf="@+id/left_gradient"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="6dp"
+                android:visibility="gone"
+                />
+
+            <View
+                android:id="@+id/right_gradient"
+                android:layout_width="32dp"
+                android:layout_height="0dp"
+                android:background="@drawable/linear_left_gradient"
+                app:layout_constraintTop_toTopOf="@+id/achieve_rv"
+                app:layout_constraintBottom_toBottomOf="@+id/achieve_rv"
+                app:layout_constraintEnd_toEndOf="@+id/achieve_rv"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/right_arrow"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                app:srcCompat="@drawable/ic_x16_arrow_right"
+                app:layout_constraintTop_toTopOf="@+id/right_gradient"
+                app:layout_constraintBottom_toBottomOf="@+id/right_gradient"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="6dp"
+                android:visibility="gone"
+                />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/info_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/achieve_rv"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                >
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/cell_iv_eaecf0"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:background="@drawable/layout_round_eaecf0_3dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/cell_tv_txt_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@+id/cell_iv_eaecf0"
+                    app:layout_constraintBottom_toBottomOf="@+id/cell_iv_eaecf0"
+                    app:layout_constraintStart_toEndOf="@+id/cell_iv_eaecf0"
+                    android:layout_marginStart="4dp"
+                    android:text="원금"
+                    android:textSize="12dp"
+                    android:textColor="@color/c_757983"
+                    android:fontFamily="@font/pretendard_semibold"
+                    android:lineHeight="20dp"
+                    />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/cell_iv_f95d5d"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:background="@drawable/layout_round_f95d5d_3dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/cell_tv_txt_1"
+                    android:layout_marginStart="16dp"
+                    />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/cell_tv_txt_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@+id/cell_iv_f95d5d"
+                    app:layout_constraintBottom_toBottomOf="@+id/cell_iv_f95d5d"
+                    app:layout_constraintStart_toEndOf="@+id/cell_iv_f95d5d"
+                    android:layout_marginStart="4dp"
+                    android:text="수익"
+                    android:textSize="12dp"
+                    android:textColor="@color/c_757983"
+                    android:fontFamily="@font/pretendard_semibold"
+                    android:lineHeight="20dp"
+                    />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

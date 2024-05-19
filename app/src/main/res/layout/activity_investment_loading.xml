@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".refactoring.ui.investment.InvestMentNoticeActivity">
+
+    <data>
+        <variable
+            name="activity"
+            type="run.piece.dev.refactoring.ui.newinvestment.InvestMentLoadingActivity"/>
+
+        <variable
+            name="viewModel"
+            type="run.piece.dev.refactoring.ui.investment.InvestMentViewModel" />
+
+        <variable
+            name="dataStoreViewModel"
+            type="run.piece.dev.refactoring.datastore.DataNexusViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/c_ffffff"
+        >
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loading_lv"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="invest_loading.json"
+            app:lottie_loop="true" />
+        
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/loading_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/text_600_20_26_center"
+            android:textColor="@color/c_292a2e"
+            android:text="@string/investment_loading_title"
+            app:layout_constraintTop_toBottomOf="@+id/loading_lv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+        
+        
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

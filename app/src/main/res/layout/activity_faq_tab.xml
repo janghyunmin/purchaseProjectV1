@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="activity"
+            type="run.piece.dev.refactoring.ui.faq.FaqTabActivity" />
+        <variable
+            name="vm"
+            type="run.piece.dev.refactoring.ui.faq.FaqTabViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title_tv"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="center"
+            android:text="@string/faq_tab_title_text"
+            android:textSize="16dp"
+            android:textColor="@color/c_4a4d55"
+            android:fontFamily="@font/pretendard_regular" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
+            app:layout_constraintBottom_toBottomOf="@+id/title_tv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/title_tv"
+            app:srcCompat="@drawable/ic_arrow_start" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_tv"
+            app:tabBackground="@drawable/tab_indicator_color"
+            app:tabIndicatorColor="@color/g900_292A2E"
+            app:tabTextColor="@color/g500_B8BCC8"
+            app:tabSelectedTextColor="@color/g900_292A2E"
+            app:tabTextAppearance="@style/title_2"
+            app:tabRippleColor="@color/trans"
+            app:tabIndicatorFullWidth="false"
+            app:tabIndicatorHeight="2dp"
+            app:tabIndicatorAnimationMode="elastic"
+            app:tabGravity="fill"
+            app:tabMode="scrollable">
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/all_tab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="전체"
+                />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/quarterly_tab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="일반사항"/>
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/asset_purchase_tab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="자산매입" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/revenue_cost_tab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="수익/비용" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/protection_tab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="투자자보호" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/understand_tab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="이해상충" />
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/faq_rv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tab_layout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="piece_loading.json"
+            app:lottie_loop="true" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="#591A1A1A">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mDialog"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/parent_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/c_dialog_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/close_btn"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:srcCompat="@drawable/x_icon_gray" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="56dp"
+                    android:gravity="center"
+                    android:text="@string/alarm_title"
+                    android:textColor="@color/c_131313"
+                    android:textSize="20dp"
+                    android:lineHeight="28dp"
+                    app:fontFamily="@font/pretendard_extrabold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/subTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/alarm_sub_title"
+                    android:textColor="@color/c_757983"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginEnd="36dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/title"
+                    style="@style/text_400_16_25_center"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/img_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/subTitle">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/alarm_bell_iv"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="35dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/alarm_box_iv"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="52dp"
+                        android:layout_marginBottom="40dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/alarm_bell_iv"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:srcCompat="@drawable/announcement_1" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/alarm_puzzle_iv"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:layout_marginTop="38dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintStart_toStartOf="@+id/alarm_calender_iv"
+                        app:layout_constraintEnd_toEndOf="@+id/alarm_calender_iv"
+                        app:layout_constraintBottom_toTopOf="@+id/alarm_calender_iv"
+                        app:srcCompat="@drawable/announcement_2" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/alarm_calender_iv"
+                        android:layout_width="83dp"
+                        android:layout_height="83dp"
+                        android:layout_marginEnd="64dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintStart_toEndOf="@+id/alarm_bell_iv"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@+id/alarm_bell_iv"
+                        app:srcCompat="@drawable/announcement_6" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/okBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/j_btn_text_back"
+                    android:gravity="center"
+                    android:text="@string/alarm_ok_btn_title"
+                    android:textColor="@color/white"
+                    android:textSize="16dp"
+                    android:lineHeight="25dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="28dp"
+                    app:fontFamily="@font/pretendard_bold"
+                    app:layout_constraintTop_toBottomOf="@+id/img_layout"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

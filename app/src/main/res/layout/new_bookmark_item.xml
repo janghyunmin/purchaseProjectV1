@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="vm"
+            type="run.piece.dev.refactoring.ui.bookmark.NewBookMarkViewModel" />
+
+
+        <variable
+            name="magazineItemVo"
+            type="run.piece.domain.refactoring.magazine.vo.MagazineItemVo" />
+
+
+        <variable
+            name="pos"
+            type="Integer" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{magazineItemVo.title}"
+                android:fontFamily="@font/pretendard_extrabold"
+                android:lineHeight="28dp"
+                android:textColor="@color/c_131313"
+                android:textFontWeight="800"
+                android:textSize="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/thumnailPath"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/midTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{magazineItemVo.midTitle}"
+                android:fontFamily="@font/pretendard_bold"
+                android:lineHeight="25dp"
+                android:textColor="@color/c_131313"
+                android:textFontWeight="700"
+                android:textSize="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/thumnailPath"
+                app:layout_constraintTop_toBottomOf="@+id/title" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/smallTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{magazineItemVo.smallTitle}"
+                android:fontFamily="@font/pretendard_regular"
+                android:lineHeight="20dp"
+                android:textColor="@color/c_131313"
+                android:textFontWeight="400"
+                android:textSize="14dp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/midTitle"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/thumnailPath"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/bookmark"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/bookmark_selector"
+                app:layout_constraintBottom_toBottomOf="@+id/thumnailPath"
+                app:layout_constraintEnd_toEndOf="@+id/thumnailPath" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/c_eaecf0"
+            app:layout_constraintTop_toBottomOf="@+id/parent" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingTop="8dp"
+            app:lottie_fileName="piece_loading.json"
+            app:lottie_loop="true"
+            app:lottie_autoPlay="true"
+            android:visibility="gone"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

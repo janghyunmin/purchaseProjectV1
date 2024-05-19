@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="activity"
+            type="run.piece.dev.refactoring.ui.join.NewJoinSuccessActivity" />
+
+        <variable
+            name="viewModel"
+            type="run.piece.dev.refactoring.ui.join.NewJoinViewModel" />
+
+        <variable
+            name="dataStoreViewModel"
+            type="run.piece.dev.refactoring.datastore.DataNexusViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/lottie_layout"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="179dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lottie_layout"
+            style="@style/display_2"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/sub_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/g700_757983"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            style="@style/body_1"/>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/guide_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="@string/guide_confirm_text"
+            android:textColor="@color/g600_8C919F"
+            app:layout_constraintBottom_toTopOf="@+id/confirm_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/body_3"/>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/confirm_btn"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/j_btn_text_back"
+            android:gravity="center"
+            android:text="@string/confirm_text"
+            android:textColor="@drawable/j_selector_text_color"
+            android:lineHeight="25dp"
+            android:textSize="14dp"
+            app:fontFamily="@font/pretendard_bold"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

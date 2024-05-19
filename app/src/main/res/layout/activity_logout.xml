@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="activity"
+            type="run.piece.dev.refactoring.ui.logout.LogoutActivity" />
+        <variable
+            name="viewModel"
+            type="run.piece.dev.refactoring.ui.logout.LogoutViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/content_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/withdraw_success_lottie"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/app_icon_light"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title"
+                android:layout_marginTop="24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/logout_title"
+                android:textSize="26dp"
+                android:lineHeight="34dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/pretendard_regular"
+                app:layout_constraintTop_toBottomOf="@+id/withdraw_success_lottie"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/guide_text"
+            android:layout_marginBottom="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/logout_title_1"
+            android:gravity="center"
+            android:textColor="@color/g600_8C919F"
+            android:fontFamily="@font/pretendard_regular"
+            android:textSize="14dp"
+            android:lineHeight="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/re_login_tv" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/re_login_tv"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/layout_round_10cfc9"
+            android:gravity="center"
+            android:text="@string/retry_logout_title"
+            android:textColor="@drawable/j_selector_text_color"
+            android:lineHeight="25dp"
+            android:textSize="16dp"
+            android:onClick="@{() -> activity.reLogin()}"
+            app:fontFamily="@font/pretendard_bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

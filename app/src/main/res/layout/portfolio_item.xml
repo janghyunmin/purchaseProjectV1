@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="item"
+            type="run.piece.domain.refactoring.portfolio.model.PortfoliosVo" />
+
+        <variable
+            name="adapter"
+            type="run.piece.dev.refactoring.ui.portfolio.list.NewPortfolioAdapter" />
+
+        <variable
+            name="vm"
+            type="run.piece.dev.refactoring.ui.portfolio.PortfolioNewViewModel" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+    </data>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/parent"
+        android:layout_width="match_parent"
+        android:layout_height="480dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/content_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/portfolio_img"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:adjustViewBounds="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:foreground="@drawable/gradient_port_folio"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/portfolio_status"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/portfolio_status_background"
+                android:fontFamily="@font/pretendard_semibold"
+                android:gravity="center"
+                android:lineHeight="20dp"
+                android:paddingStart="12dp"
+                android:paddingTop="4dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="4dp"
+                android:text=""
+                android:textColor="@color/c_292a2e"
+                android:textSize="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/portfolio_text"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/portfolio_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="16dp"
+                android:text=""
+                android:visibility="visible"
+                android:textColor="@color/c_ffffff"
+                android:textSize="26dp"
+                app:fontFamily="@font/pretendard_bold"
+                app:layout_constraintBottom_toTopOf="@+id/portfolio_number_tv"
+                app:layout_constraintStart_toStartOf="parent"
+
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/portfolio_number_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginBottom="32dp"
+                android:fontFamily="@font/pretendard_semibold"
+                android:textColor="@color/c_ffffff"
+                android:textSize="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ellipse_iv"
+                android:layout_width="4dp"
+                android:layout_height="4dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/portfolio_number_tv"
+                app:layout_constraintEnd_toStartOf="@+id/portfolio_title"
+                app:layout_constraintStart_toEndOf="@+id/portfolio_number_tv"
+                app:layout_constraintTop_toTopOf="@+id/portfolio_number_tv"
+                app:srcCompat="@drawable/ellipse_4dp_white" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/portfolio_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/pretendard_semibold"
+                android:lineHeight="20dp"
+                android:maxLines="1"
+                android:textColor="@color/c_ffffff"
+                android:textSize="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/portfolio_number_tv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ellipse_iv"
+                app:layout_constraintTop_toTopOf="@id/portfolio_number_tv" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</layout>

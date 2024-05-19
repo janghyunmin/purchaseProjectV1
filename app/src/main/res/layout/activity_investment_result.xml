@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".refactoring.ui.investment.InvestMentNoticeActivity">
+
+    <data>
+
+        <variable
+            name="activity"
+            type="run.piece.dev.refactoring.ui.newinvestment.InvestMentResultActivity" />
+
+        <variable
+            name="viewModel"
+            type="run.piece.dev.refactoring.ui.investment.InvestMentViewModel" />
+
+        <variable
+            name="dataStoreViewModel"
+            type="run.piece.dev.refactoring.datastore.DataNexusViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/c_ffffff">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/root_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="80dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/result_title_tv"
+                    style="@style/text_600_24_32_center"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="24dp"
+                    android:text="@string/investment_result_top_title"
+                    android:textColor="@color/c_131313"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/result_iv"
+                    android:layout_width="0dp"
+                    android:layout_height="343dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/result_title_tv" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/description_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/layout_round_16dp_f9f9f9"
+                    android:paddingBottom="24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/result_iv">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/small_iv"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="24dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/description_title_tv"
+                        style="@style/text_600_20_26_left"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="24dp"
+                        android:text="@string/investment_result_description_title"
+                        android:textColor="@color/c_292a2e"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/small_iv" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/description_content_tv"
+                        style="@style/text_400_16_26_left"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="24dp"
+                        android:text=""
+                        android:textColor="@color/c_4a4d55"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/description_title_tv" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/interestProductDescription_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/layout_round_16dp_f9f9f9"
+                    android:paddingBottom="24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/description_layout">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/product_small_iv"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="24dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/icon_x40_won_circle" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/product_title_tv"
+                        style="@style/text_600_20_26_left"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="24dp"
+                        android:text="@string/investment_result_product_title"
+                        android:textColor="@color/c_292a2e"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/product_small_iv" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/product_content_tv"
+                        style="@style/text_400_16_26_left"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="24dp"
+                        android:text=""
+                        android:textColor="@color/c_4a4d55"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/product_title_tv" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/btn_layout"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <!-- Views inside tooltip_layout -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/tool_tip_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:translationY="-2dp"
+                android:elevation="1dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:background="@drawable/ic_x16_tooltip"
+                app:layout_constraintStart_toStartOf="@+id/retry_btn"
+                app:layout_constraintEnd_toEndOf="@+id/retry_btn"
+                app:layout_constraintBottom_toTopOf="@+id/retry_btn">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/retry_count_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/text_700_12_16_center"
+                    android:text=""
+                    android:textColor="@color/c_757983"
+                    android:gravity="center"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="14dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintTop_toTopOf="@+id/tool_tip_layout"
+                    app:layout_constraintBottom_toBottomOf="@+id/tool_tip_layout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/retry_btn"
+                style="@style/text_700_16_25_center"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/layout_round_10cfc9_10dp"
+                android:text="@string/investment_result_btn_retry_title"
+                android:textColor="@color/c_10cfc9"
+                android:elevation="0.2dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/go_product"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/go_product"
+                style="@style/text_700_16_25_center"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/j_btn_text_back"
+                android:text="@string/investment_result_btn_product_title"
+                android:textColor="@color/c_ffffff"
+                android:elevation="0.2dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/retry_btn" />
+
+            <View
+                android:id="@+id/empty_view"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:elevation="0.1dp"
+                android:background="@color/c_ffffff"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

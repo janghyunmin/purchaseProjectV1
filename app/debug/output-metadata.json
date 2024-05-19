@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "run.piece.dev",
+  "variantName": "debug",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 50,
+      "versionName": "2.0.14",
+      "outputFile": "app-debug.apk"
+    }
+  ],
+  "elementType": "File"
+}

@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- V3 Fonts -->
+    <style name="display_1" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_bold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="lineHeight">36dp</item>
+        <item name="android:textSize">28dp</item>
+    </style>
+
+    <style name="display_2" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_semibold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="lineHeight">32dp</item>
+        <item name="android:textSize">24dp</item>
+    </style>
+
+    <style name="title_1" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_semibold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="lineHeight">26dp</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="title_2" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_semibold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="lineHeight">20dp</item>
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="title_3" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_semibold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="lineHeight">18dp</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="body_1" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="lineHeight">26dp</item>
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="body_2" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="lineHeight">22dp</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="body_3" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="lineHeight">20dp</item>
+        <item name="android:textSize">13dp</item>
+    </style>
+
+    <style name="label" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_semibold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="lineHeight">20dp</item>
+        <item name="android:textSize">12dp</item>
+    </style>
+
+
+    <!-- style 추가 -->
+    <!-- fontWeight / textSize / Line height / gravity -->
+    <style name="text_800_20_28_center" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_extrabold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">20dp</item>
+        <item name="lineHeight">28dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="text_800_20_28_left" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_extrabold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">20dp</item>
+        <item name="lineHeight">28dp</item>
+        <item name="android:gravity">left</item>
+    </style>
+
+    <style name="text_700_20_28_center" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_bold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">20dp</item>
+        <item name="lineHeight">28dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="text_700_16_25_left" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_bold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">16dp</item>
+        <item name="lineHeight">25dp</item>
+        <item name="android:gravity">left</item>
+    </style>
+
+    <style name="text_700_16_25_center" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_bold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">16dp</item>
+        <item name="lineHeight">25dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="text_700_16_25_right" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_bold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">16dp</item>
+        <item name="lineHeight">25dp</item>
+        <item name="android:gravity">right</item>
+    </style>
+
+    <style name="text_700_14_20_center" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_bold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">14dp</item>
+        <item name="lineHeight">20dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="text_700_12_16_center" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_bold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">12dp</item>
+        <item name="lineHeight">16dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+
+    <style name="text_600_24_32_left" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_semibold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">24dp</item>
+        <item name="lineHeight">32dp</item>
+        <item name="android:gravity">left</item>
+    </style>
+
+    <style name="text_600_24_32_center" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_semibold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">24dp</item>
+        <item name="lineHeight">32dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="text_600_20_26_left" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_semibold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">20dp</item>
+        <item name="lineHeight">26dp</item>
+        <item name="android:gravity">left</item>
+    </style>
+
+    <style name="text_600_20_26_center" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_semibold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">20dp</item>
+        <item name="lineHeight">26dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="text_600_20_28_center" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_semibold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">20dp</item>
+        <item name="lineHeight">28dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="text_600_14_18_left" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_semibold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">14dp</item>
+        <item name="lineHeight">18dp</item>
+        <item name="android:gravity">left</item>
+    </style>
+
+    <style name="text_600_14_18_center" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_semibold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">14dp</item>
+        <item name="lineHeight">18dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="text_600_16_20_center" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_semibold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">16dp</item>
+        <item name="lineHeight">20dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="text_600_16_20_left_center" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_semibold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">16dp</item>
+        <item name="lineHeight">20dp</item>
+        <item name="android:gravity">left|center</item>
+    </style>
+
+    <style name="text_600_16_20_left" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_semibold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">16dp</item>
+        <item name="lineHeight">20dp</item>
+        <item name="android:gravity">left</item>
+    </style>
+
+    <style name="text_400_26_34_center" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">26dp</item>
+        <item name="lineHeight">34dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="text_400_13_20_left" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">13dp</item>
+        <item name="lineHeight">20dp</item>
+        <item name="android:gravity">left</item>
+    </style>
+
+    <style name="text_400_16_26_left" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">16dp</item>
+        <item name="lineHeight">26dp</item>
+        <item name="android:gravity">left</item>
+    </style>
+
+    <style name="text_400_16_25_left_center" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">16dp</item>
+        <item name="lineHeight">25dp</item>
+        <item name="android:gravity">left|center</item>
+    </style>
+
+    <style name="text_400_16_26_left_center" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">16dp</item>
+        <item name="lineHeight">26dp</item>
+        <item name="android:gravity">left|center</item>
+    </style>
+
+    <style name="text_400_16_25_center" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">16dp</item>
+        <item name="lineHeight">25dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+
+    <style name="text_400_16_25_right" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">16dp</item>
+        <item name="lineHeight">25dp</item>
+        <item name="android:gravity">right</item>
+    </style>
+
+    <style name="text_400_16_26_center" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">16dp</item>
+        <item name="lineHeight">26dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="text_400_14_22_left" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">14dp</item>
+        <item name="lineHeight">22dp</item>
+        <item name="android:gravity">left</item>
+    </style>
+
+    <style name="text_400_14_20_left" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">14dp</item>
+        <item name="lineHeight">20dp</item>
+        <item name="android:gravity">left</item>
+    </style>
+
+    <style name="text_400_14_20_center" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">14dp</item>
+        <item name="lineHeight">20dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="text_400_14_20_right" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">14dp</item>
+        <item name="lineHeight">20dp</item>
+        <item name="android:gravity">right</item>
+    </style>
+
+    <style name="text_400_14_22_center" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">14dp</item>
+        <item name="lineHeight">22dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="text_400_12_16_left" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">12dp</item>
+        <item name="lineHeight">16dp</item>
+        <item name="android:gravity">left</item>
+    </style>
+
+    <style name="text_400_12_16_center" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">12dp</item>
+        <item name="lineHeight">16dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="text_400_12_16_right" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">12dp</item>
+        <item name="lineHeight">16dp</item>
+        <item name="android:gravity">right</item>
+    </style>
+</resources>

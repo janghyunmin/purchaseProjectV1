@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="profitPop"
+            type="run.piece.dev.view.fragment.dialog.ProfitBottomSheetDialog" />
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/j_dialog_back_round"
+        app:behavior_hideable="true"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/img_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/top_title"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:lineHeight="28dp"
+                android:text="@string/profit_title"
+                android:fontFamily="@font/pretendard_bold"
+                />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottie"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="50dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/number"
+                app:layout_constraintTop_toBottomOf="@+id/lottie"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:lineHeight="28dp"
+                android:fontFamily="@font/pretendard_bold"
+                />
+
+            <TextView
+                android:id="@+id/text"
+                app:layout_constraintBottom_toBottomOf="@+id/number"
+                app:layout_constraintStart_toEndOf="@+id/number"
+                android:layout_marginStart="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/virtual_9"
+                android:fontFamily="@font/pretendard_regular"
+                android:textColor="@color/c_4a4d55"
+                android:textSize="16dp"
+                android:lineHeight="25dp"
+                />
+
+            <TextView
+                android:id="@+id/notice"
+                app:layout_constraintTop_toBottomOf="@+id/number"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/profit_title_1"
+                android:fontFamily="@font/pretendard_regular"
+                android:textSize="14dp"
+                android:lineHeight="20dp"
+                android:textColor="@color/c_8c919f"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bottom_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_layout"
+            android:layout_marginTop="50dp"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/confirm_btn"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:background="@drawable/j_btn_text_back"
+                android:gravity="center"
+                android:text="@string/profit_title_2"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:lineHeight="25dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="16dp"
+                app:fontFamily="@font/pretendard_bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingTop="8dp"
+            app:lottie_fileName="piece_loading.json"
+            app:lottie_loop="true"
+            app:lottie_autoPlay="true"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

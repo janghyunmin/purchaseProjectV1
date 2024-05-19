@@ -1,0 +1,183 @@
+{
+  "alarms": [
+    {
+      "notificationId": "8b7f3abe-474c-4cee-ac9b-ecccdc0bd719",
+      "memberId": "b763a819-bea4-4d72-a3f2-77e5c7bc9753",
+      "title": "더보기 푸시 제목12",
+      "message": "내용",
+      "notificationType": "NTT0112",
+      "notificationTypeName": null,
+      "referralTarget": null,
+      "isRead": "Y",
+      "createdAt": "2023.11.14"
+    },
+    {
+      "notificationId": "56aa8407-447b-4119-abc3-916e991ce392",
+      "memberId": "b763a819-bea4-4d72-a3f2-77e5c7bc9753",
+      "title": "더보기 푸시 제목12",
+      "message": "테스트 내용입니다.12",
+      "notificationType": "NTT0112",
+      "notificationTypeName": null,
+      "referralTarget": null,
+      "isRead": "Y",
+      "createdAt": "2023.11.14"
+    },
+    {
+      "notificationId": "8aee342d-5806-448f-ab8c-225e7a2a33f1",
+      "memberId": "b763a819-bea4-4d72-a3f2-77e5c7bc9753",
+      "title": "더보기 푸시 제목1",
+      "message": "테스트 내용입니다.1",
+      "notificationType": "NTT0112",
+      "notificationTypeName": null,
+      "referralTarget": null,
+      "isRead": "Y",
+      "createdAt": "2023.11.14"
+    },
+    {
+      "notificationId": "c6c6dc53-4a29-4e78-a275-80beb3df96e7",
+      "memberId": "b763a819-bea4-4d72-a3f2-77e5c7bc9753",
+      "title": "더보기 푸시 제목",
+      "message": "테스트 내용입니다.",
+      "notificationType": "NTT0112",
+      "notificationTypeName": null,
+      "referralTarget": null,
+      "isRead": "Y",
+      "createdAt": "2023.11.14"
+    },
+    {
+      "notificationId": "a5ad3298-7d14-430f-b3fd-41b9b7e4afa7",
+      "memberId": "b763a819-bea4-4d72-a3f2-77e5c7bc9753",
+      "title": "더보기 푸시 제목",
+      "message": "테스트 내용입니다.",
+      "notificationType": "NTT0112",
+      "notificationTypeName": null,
+      "referralTarget": null,
+      "isRead": "Y",
+      "createdAt": "2023.11.14"
+    },
+    {
+      "notificationId": "c6893826-96c8-49ae-900b-8ac82b2e3b7e",
+      "memberId": "b763a819-bea4-4d72-a3f2-77e5c7bc9753",
+      "title": "더보기 푸시 제목",
+      "message": "내용",
+      "notificationType": "NTT0112",
+      "notificationTypeName": null,
+      "referralTarget": null,
+      "isRead": "Y",
+      "createdAt": "2023.11.14"
+    },
+    {
+      "notificationId": "92bd1204-82a8-11ee-8b25-f220ef2e7bc1",
+      "memberId": "b763a819-bea4-4d72-a3f2-77e5c7bc9753",
+      "title": "오후01시50분! 모집시작",
+      "message": "선착순 모집에 꼭 성공하시길 기원할게요 🙏",
+      "notificationType": "NTT0102",
+      "notificationTypeName": null,
+      "referralTarget": null,
+      "isRead": "Y",
+      "createdAt": "2023.11.14"
+    },
+    {
+      "notificationId": "991e07b0-7447-4409-8dfa-c2313c1aae81",
+      "memberId": "b763a819-bea4-4d72-a3f2-77e5c7bc9753",
+      "title": "공지사항 목록",
+      "message": "내용",
+      "notificationType": "NTT0112",
+      "notificationTypeName": null,
+      "referralTarget": null,
+      "isRead": "Y",
+      "createdAt": "2023.11.13"
+    },
+    {
+      "notificationId": "b89600f5-279f-4651-a100-00f2288c4400",
+      "memberId": "b763a819-bea4-4d72-a3f2-77e5c7bc9753",
+      "title": "공지사항 목록",
+      "message": "내용",
+      "notificationType": "NTT0112",
+      "notificationTypeName": null,
+      "referralTarget": null,
+      "isRead": "Y",
+      "createdAt": "2023.11.13"
+    },
+    {
+      "notificationId": "b0abff31-0b37-4a87-ae1e-c5559ecae47f",
+      "memberId": "b763a819-bea4-4d72-a3f2-77e5c7bc9753",
+      "title": "공지사항 목록",
+      "message": "내용",
+      "notificationType": "NTT0112",
+      "notificationTypeName": null,
+      "referralTarget": null,
+      "isRead": "Y",
+      "createdAt": "2023.11.13"
+    },
+    {
+      "notificationId": "37a9a421-c8c9-458b-bed2-90bcfa2d84a6",
+      "memberId": "b763a819-bea4-4d72-a3f2-77e5c7bc9753",
+      "title": "공지사항 목록",
+      "message": "내용",
+      "notificationType": "NTT0112",
+      "notificationTypeName": null,
+      "referralTarget": null,
+      "isRead": "Y",
+      "createdAt": "2023.11.13"
+    },
+    {
+      "notificationId": "9a1c8f24-6846-4f95-99c8-b9276a7835ed",
+      "memberId": "b763a819-bea4-4d72-a3f2-77e5c7bc9753",
+      "title": "공지사항 목록",
+      "message": "내용",
+      "notificationType": "NTT0112",
+      "notificationTypeName": null,
+      "referralTarget": null,
+      "isRead": "Y",
+      "createdAt": "2023.11.13"
+    },
+    {
+      "notificationId": "41cd6ba4-7505-4791-ae46-36ed9664364e",
+      "memberId": "b763a819-bea4-4d72-a3f2-77e5c7bc9753",
+      "title": "공지사항 목록",
+      "message": "내용",
+      "notificationType": "NTT0112",
+      "notificationTypeName": null,
+      "referralTarget": null,
+      "isRead": "Y",
+      "createdAt": "2023.11.13"
+    },
+    {
+      "notificationId": "90a63c51-81f1-11ee-8b25-f220ef2e7bc1",
+      "memberId": "b763a819-bea4-4d72-a3f2-77e5c7bc9753",
+      "title": "오후04시00분! 모집시작",
+      "message": "선착순 모집에 꼭 성공하시길 기원할게요 🙏",
+      "notificationType": "NTT0102",
+      "notificationTypeName": null,
+      "referralTarget": null,
+      "isRead": "Y",
+      "createdAt": "2023.11.13"
+    },
+    {
+      "notificationId": "cb042b17-5112-4722-8c24-3fb904c7ace8",
+      "memberId": "b763a819-bea4-4d72-a3f2-77e5c7bc9753",
+      "title": "예치금 출금 신청 알림",
+      "message": "1원이 KB국민은행 계좌로 출금 신청되었습니다.",
+      "notificationType": "NTT0109",
+      "notificationTypeName": null,
+      "referralTarget": null,
+      "isRead": "Y",
+      "createdAt": "2023.07.18"
+    },
+    {
+      "notificationId": "e29bc358-5b1a-4eeb-a082-61fb28cd3b10",
+      "memberId": "b763a819-bea4-4d72-a3f2-77e5c7bc9753",
+      "title": "예치금 출금 신청 알림",
+      "message": "5원이 KB국민은행 계좌로 출금 신청되었습니다.",
+      "notificationType": "NTT0109",
+      "notificationTypeName": null,
+      "referralTarget": null,
+      "isRead": "Y",
+      "createdAt": "2023.07.18"
+    }
+  ],
+  "totalCount": 549,
+  "page": 1,
+  "length": 500
+}

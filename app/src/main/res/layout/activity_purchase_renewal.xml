@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="activity"
+            type="run.piece.dev.refactoring.ui.purchase.PurchaseRenewalActivity" />
+
+        <!-- 예치금 잔액 ViewModel -->
+        <variable
+            name="depositVm"
+            type="run.piece.dev.data.viewmodel.DepositBalanceViewModel" />
+
+        <variable
+            name="dataStoreViewModel"
+            type="run.piece.dev.refactoring.datastore.DataNexusViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/top_layout"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/back_iv"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="12dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:background="@drawable/ic_x24_arrow_left_black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/text_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/top_layout">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/input_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard_extrabold"
+                    android:gravity="center"
+                    android:hint="몇 주를 신청할까요?"
+                    android:lineHeight="34dp"
+                    android:text=""
+                    android:textColor="@color/c_131313"
+                    android:textColorHint="@color/c_eaecf0"
+                    android:textSize="26dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/deposit_charge_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/layout_round_e6f9fa"
+                    android:fontFamily="@font/pretendard_extrabold"
+                    android:gravity="center"
+                    android:lineHeight="20dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:text="예치금 입금"
+                    android:textColor="@color/c_10cfc9"
+                    android:textSize="14dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/input_tv" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/deposit_balance_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="8dp"
+                    android:text=""
+                    style="@style/text_700_14_20_center"
+                    android:textColor="@color/c_b8bcc8"
+                    app:layout_constraintTop_toBottomOf="@+id/input_tv" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/status_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintBottom_toTopOf="@+id/plus_layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/status_txt_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:text=""
+                    android:textSize="14dp"
+                    android:lineHeight="20dp"
+                    android:textColor="@color/c_8c919f"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/status_tv"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/status_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard_extrabold"
+                    android:text=""
+                    android:textSize="14dp"
+                    android:lineHeight="20dp"
+                    android:textColor="@color/c_10cfc9"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/status_txt_1"
+                    app:layout_constraintEnd_toStartOf="@+id/status_txt_2"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/status_txt_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:text=""
+                    android:textSize="14dp"
+                    android:lineHeight="20dp"
+                    android:textColor="@color/c_8c919f"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/status_tv"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    />
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/plus_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintBottom_toTopOf="@+id/passcode_layout">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/plus1"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/layout_border_eaecf0"
+                    android:fontFamily="@font/pretendard_bold"
+                    android:gravity="center"
+                    android:lineHeight="20dp"
+                    android:text="@string/purchase_btn_text_1"
+                    android:textColor="@color/c_b8bcc8"
+                    android:textSize="14dp"
+                    app:layout_constraintEnd_toStartOf="@+id/plus5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/plus5"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/layout_border_eaecf0"
+                    android:fontFamily="@font/pretendard_bold"
+                    android:gravity="center"
+                    android:lineHeight="20dp"
+                    android:text="@string/purchase_btn_text_5"
+                    android:textColor="@color/c_b8bcc8"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toEndOf="@+id/plus1"
+                    app:layout_constraintEnd_toStartOf="@+id/plus10"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/plus10"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/layout_border_eaecf0"
+                    android:fontFamily="@font/pretendard_bold"
+                    android:gravity="center"
+                    android:lineHeight="20dp"
+                    android:text="@string/purchase_btn_text_10"
+                    android:textColor="@color/c_b8bcc8"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toEndOf="@+id/plus5"
+                    app:layout_constraintEnd_toStartOf="@+id/plus50"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/plus50"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/layout_border_eaecf0"
+                    android:fontFamily="@font/pretendard_bold"
+                    android:gravity="center"
+                    android:lineHeight="20dp"
+                    android:text="@string/purchase_btn_text_50"
+                    android:textColor="@color/c_b8bcc8"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toEndOf="@+id/plus10"
+                    app:layout_constraintEnd_toStartOf="@+id/plus_max"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/plus_max"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/layout_border_eaecf0"
+                    android:fontFamily="@font/pretendard_bold"
+                    android:gravity="center"
+                    android:lineHeight="20dp"
+                    android:text="@string/purchase_btn_text_max"
+                    android:textColor="@color/c_b8bcc8"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toEndOf="@+id/plus50"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- 키패드 부모 레이아웃 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/passcode_layout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/confirm_btn">
+                <!-- 1번째 열 키패드 -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/row_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="72dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/code_1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:gravity="center"
+                            android:lineHeight="34dp"
+                            android:text="@string/number_1"
+                            android:textColor="@color/text_alpha_20"
+                            android:textSize="26dp"
+                            app:fontFamily="@font/pretendard_regular"
+                            app:layout_constraintEnd_toStartOf="@+id/code_2"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/code_2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:gravity="center"
+                            android:lineHeight="34dp"
+                            android:text="@string/number_2"
+                            android:textColor="@color/text_alpha_20"
+                            android:textSize="26dp"
+                            app:fontFamily="@font/pretendard_regular"
+                            app:layout_constraintEnd_toStartOf="@+id/code_3"
+                            app:layout_constraintStart_toEndOf="@+id/code_1" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/code_3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:gravity="center"
+                            android:lineHeight="34dp"
+                            android:text="@string/number_3"
+                            android:textColor="@color/text_alpha_20"
+                            android:textSize="26dp"
+                            app:fontFamily="@font/pretendard_regular"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/code_2" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- 2번째 열 키패드 -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/row_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/row_1">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="72dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/code_4"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:gravity="center"
+                            android:lineHeight="34dp"
+                            android:text="@string/number_4"
+                            android:textColor="@color/text_alpha_20"
+                            android:textSize="26dp"
+                            app:fontFamily="@font/pretendard_regular"
+                            app:layout_constraintEnd_toStartOf="@+id/code_5"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/code_5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:gravity="center"
+                            android:lineHeight="34dp"
+                            android:text="@string/number_5"
+                            android:textColor="@color/text_alpha_20"
+                            android:textSize="26dp"
+                            app:fontFamily="@font/pretendard_regular"
+                            app:layout_constraintEnd_toStartOf="@+id/code_6"
+                            app:layout_constraintStart_toEndOf="@+id/code_4" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/code_6"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:gravity="center"
+                            android:lineHeight="34dp"
+                            android:text="@string/number_6"
+                            android:textColor="@color/text_alpha_20"
+                            android:textSize="26dp"
+                            app:fontFamily="@font/pretendard_regular"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/code_5" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- 3번째 열 키패드 -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/row_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/row_2">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="72dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/code_7"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:gravity="center"
+                            android:lineHeight="34dp"
+                            android:text="@string/number_7"
+                            android:textColor="@color/text_alpha_20"
+                            android:textSize="26dp"
+                            app:fontFamily="@font/pretendard_regular"
+                            app:layout_constraintEnd_toStartOf="@+id/code_8"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/code_8"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:gravity="center"
+                            android:lineHeight="34dp"
+                            android:text="@string/number_8"
+                            android:textColor="@color/text_alpha_20"
+                            android:textSize="26dp"
+                            app:fontFamily="@font/pretendard_regular"
+                            app:layout_constraintEnd_toStartOf="@+id/code_9"
+                            app:layout_constraintStart_toEndOf="@+id/code_7" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/code_9"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:gravity="center"
+                            android:lineHeight="34dp"
+                            android:text="@string/number_9"
+                            android:textColor="@color/text_alpha_20"
+                            android:textSize="26dp"
+                            app:fontFamily="@font/pretendard_regular"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/code_8" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <!-- 4번째 열 키패드 -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/row_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/row_3">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="72dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/allClear"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:gravity="center"
+                            android:lineHeight="20dp"
+                            android:text="@string/passcode_clear"
+                            android:textColor="@color/text_alpha_20"
+                            android:textSize="14dp"
+                            app:fontFamily="@font/pretendard_regular"
+                            app:layout_constraintEnd_toStartOf="@+id/code_0"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/code_0"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:gravity="center"
+                            android:lineHeight="34dp"
+                            android:text="@string/number_0"
+                            android:textColor="@color/text_alpha_20"
+                            android:textSize="26dp"
+                            app:fontFamily="@font/pretendard_regular"
+                            app:layout_constraintEnd_toStartOf="@id/clear"
+                            app:layout_constraintStart_toEndOf="@+id/allClear" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/clear"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:text="지우기"
+                            android:textColor="@color/transparent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/code_0" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/clear_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/keypad_clear_icon_f"
+                            app:layout_constraintBottom_toBottomOf="@+id/clear"
+                            app:layout_constraintEnd_toEndOf="@+id/clear"
+                            app:layout_constraintStart_toStartOf="@id/clear"
+                            app:layout_constraintTop_toTopOf="@+id/clear" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/confirm_btn"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/j_selector"
+                android:gravity="center"
+                android:lineHeight="25dp"
+                android:text="신청하기"
+                android:textColor="@drawable/j_selector_text_color"
+                android:textSize="16dp"
+                app:fontFamily="@font/pretendard_bold"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

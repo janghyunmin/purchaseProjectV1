@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="activity"
+            type="run.piece.dev.refactoring.ui.purchase.NewPurchaseDetailActivity" />
+
+        <variable
+            name="viewModel"
+            type="run.piece.dev.refactoring.ui.deposit.DepositViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/parent_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fillViewport="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/top_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/back_layout"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:layout_marginStart="4dp"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/back_iv"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:background="@drawable/ic_x24_arrow_left_black"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/top_title_tv"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:text=""
+                        style="@style/text_400_16_25_center"
+                        android:textColor="@color/g800_4A4D55"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginEnd="6dp"
+                        app:layout_constraintStart_toEndOf="@+id/back_layout"
+                        app:layout_constraintEnd_toStartOf="@id/share_layout"
+                        app:layout_constraintTop_toTopOf="@+id/back_layout"
+                        app:layout_constraintBottom_toBottomOf="@+id/back_layout" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/share_layout"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:visibility="invisible"
+                        android:layout_marginEnd="6dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/share_iv"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout"
+                    android:layout_width="0dp"
+                    android:layout_height="230dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/top_layout">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/portfolio_iv"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:background="@drawable/layout_round_f2f3f4" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/date_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="15dp"
+                            style="@style/text_700_14_20_center"
+                            android:textColor="@color/c_ffffff"
+                            app:layout_constraintBottom_toBottomOf="@+id/piece_icon_iv"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/piece_icon_iv" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/piece_icon_iv"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginBottom="12dp"
+                            app:srcCompat="@drawable/purchase_left_icon"
+                            android:rotation="90"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/volume_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            style="@style/text_800_20_28_center"
+                            android:textColor="@color/c_ffffff"
+                            app:layout_constraintBottom_toBottomOf="@id/piece_icon_iv"
+                            app:layout_constraintStart_toEndOf="@+id/piece_icon_iv"
+                            app:layout_constraintTop_toTopOf="@+id/piece_icon_iv" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/purchase_default_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintTop_toBottomOf="@+id/layout">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="배정정보"
+                        style="@style/text_800_20_28_center"
+                        android:textColor="@color/c_131313"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <!-- 구매 일자 -->
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/purchase_date_iv"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="28dp"
+                        android:background="@drawable/purchase_icon_1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/title_tv" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/purchase_date_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="청약일자"
+                        style="@style/text_700_16_25_center"
+                        android:textColor="@color/c_131313"
+                        app:layout_constraintBottom_toBottomOf="@+id/purchase_date_iv"
+                        app:layout_constraintStart_toEndOf="@+id/purchase_date_iv"
+                        app:layout_constraintTop_toTopOf="@+id/purchase_date_iv" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/purchase_date_tv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        style="@style/text_400_16_25_right"
+                        android:textColor="@color/c_131313"
+                        android:layout_marginStart="10dp"
+                        app:layout_constraintStart_toEndOf="@+id/purchase_date_title_tv"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/purchase_date_iv"
+                        app:layout_constraintBottom_toBottomOf="@+id/purchase_date_iv" />
+
+
+                    <!-- 조각 수 -->
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/purchase_count_iv"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="20dp"
+                        app:srcCompat="@drawable/purchase_icon_2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/purchase_date_iv" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/purchase_count_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="배정수량"
+                        style="@style/text_700_16_25_center"
+                        android:textColor="@color/c_131313"
+                        app:layout_constraintBottom_toBottomOf="@+id/purchase_count_iv"
+                        app:layout_constraintStart_toEndOf="@+id/purchase_count_iv"
+                        app:layout_constraintTop_toTopOf="@+id/purchase_count_iv" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/purchase_count_tv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        style="@style/text_400_16_25_right"
+                        android:textColor="@color/c_131313"
+                        android:layout_marginStart="10dp"
+                        app:layout_constraintStart_toEndOf="@+id/purchase_count_title_tv"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/purchase_count_iv"
+                        app:layout_constraintBottom_toBottomOf="@+id/purchase_count_iv" />
+
+
+                    <!-- 총 구매 금액 -->
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/purchase_buy_iv"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="20dp"
+                        app:srcCompat="@drawable/purchase_icon_3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/purchase_count_iv" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/purchase_buy_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="배정금액"
+                        style="@style/text_700_16_25_center"
+                        android:textColor="@color/c_131313"
+                        app:layout_constraintBottom_toBottomOf="@+id/purchase_buy_iv"
+                        app:layout_constraintStart_toEndOf="@+id/purchase_buy_iv"
+                        app:layout_constraintTop_toTopOf="@+id/purchase_buy_iv" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/purchase_buy_tv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        style="@style/text_400_16_25_right"
+                        android:textColor="@color/c_131313"
+                        android:layout_marginStart="10dp"
+                        app:layout_constraintStart_toEndOf="@+id/purchase_buy_title_tv"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/purchase_buy_iv"
+                        app:layout_constraintBottom_toBottomOf="@+id/purchase_buy_iv" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/document_title_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="@string/purchase_certificate_ownership_txt"
+                    style="@style/text_800_20_28_center"
+                    android:textColor="@color/c_131313"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/purchase_default_layout" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/document_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginEnd="7dp"
+                    android:background="@drawable/layout_shadow"
+                    app:layout_constraintTop_toBottomOf="@+id/document_title_tv">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/document_name_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text=""
+                        style="@style/text_700_16_25_left"
+                        android:textColor="@color/p500_10CFC9"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginEnd="16dp"
+                        app:srcCompat="@drawable/arrow_right_c10cfc9"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/purchase_info_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="20dp"
+                    android:paddingBottom="30dp"
+                    app:layout_constraintTop_toBottomOf="@+id/document_layout">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/buy_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="증권정보"
+                        style="@style/text_800_20_28_center"
+                        android:textColor="@color/c_131313"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <!-- 포트폴리오 정보 layout start -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/portfolio_info_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="60dp"
+                        android:background="@drawable/layout_round_ffffff"
+                        android:elevation="10dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/buy_title_tv">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/portfolio_name_title_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:text="증권명"
+                            style="@style/text_700_14_20_center"
+                            android:textColor="@color/g700_757983"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/portfolio_name_tv"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:text=""
+                            style="@style/text_400_14_20_right"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/asset_title_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:text="구성자산"
+                            style="@style/text_700_14_20_center"
+                            android:textColor="@color/g700_757983"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/portfolio_name_title_tv" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/product_rv"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginEnd="16dp"
+                            app:layout_constraintStart_toEndOf="@+id/asset_title_tv"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/asset_title_tv" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/total_offering_amount_title_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:text="공모총액"
+                            style="@style/text_700_14_20_center"
+                            android:textColor="@color/g700_757983"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/product_rv" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/total_offering_amount_tv"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            style="@style/text_400_14_20_right"
+                            android:textColor="@color/g700_757983"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/total_offering_amount_title_tv" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/available_amount_title_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:text="청약 가능 금액"
+                            style="@style/text_700_14_20_center"
+                            android:textColor="@color/g700_757983"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/total_offering_amount_title_tv" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/available_amount_tv"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            style="@style/text_400_14_20_right"
+                            android:textColor="@color/g700_757983"
+                            android:text=""
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/available_amount_title_tv" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/available_amount_sub_tv"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            style="@style/text_400_14_20_right"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/available_amount_tv" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/public_offering_price_title_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginBottom="16dp"
+                            android:text="공모가액"
+                            style="@style/text_700_14_20_center"
+                            android:textColor="@color/g700_757983"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/available_amount_sub_tv" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/public_offering_price_tv"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            style="@style/text_400_14_20_right"
+                            android:textColor="@color/g700_757983"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/public_offering_price_title_tv" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/expiration_date_title_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:text="만기일"
+                            style="@style/text_700_14_20_center"
+                            android:textColor="@color/g700_757983"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/public_offering_price_title_tv" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/expiration_date_tv"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            android:textSize="14dp"
+                            style="@style/text_400_14_20_right"
+                            android:textColor="@color/g700_757983"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/expiration_date_title_tv" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <!-- 포트폴리오 정보 layout end -->
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingTop="8dp"
+            app:lottie_fileName="piece_loading.json"
+            app:lottie_loop="true"
+            app:lottie_autoPlay="true" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,214 @@
+###########
+# Android #
+# 실행순서
+# app_version_update 에서 versionCode 와 versionName을 변경 후
+# fastlane app_version_update 실행
+# 그 후 빌드 셋팅에 맞는 명렁어 입력
+###########
+update_fastlane
+
+default_platform(:android)
+platform :android do
+
+
+# Firebase Upload ################################################################################################
+desc "파이어베이스 개발서버"
+  lane :firebaseDev do
+  send_slack_message(msg:
+            "PIECE v" + android_get_version_name(gradle_file: "app/build.gradle.kts")+ " :rocket:" +
+            "\nVersionCode: " + android_get_version_code(gradle_file: "app/build.gradle.kts") +
+            "\n Firebase Distribution(Dev) 빌드 진행중입니다. 잠시만 기다려주세요. :hourglass_flowing_sand:"
+         )
+        gradle(task: "clean")
+        gradle(
+           task: ":app:assembleDev",
+           build_type: "Release"
+        )
+
+      firebase_app_distribution(
+              app: ENV['DEV_APP_ID'],
+              groups: "AOS_QA_TESTER",
+              release_notes_file: "fastlane/release-notes.txt",
+              debug: true
+          )
+
+      send_slack_message(msg:
+              "PIECE v" + android_get_version_name(gradle_file: "app/build.gradle.kts")+ " :rocket:" +
+              "\nVersionCode: " + android_get_version_code(gradle_file: "app/build.gradle.kts") +
+              "\n Firebase Distribution(Dev) 배포가 완료되었습니다. :white_check_mark:"
+          )
+  end
+
+
+  desc "파이어베이스 스테이지서버"
+    lane :firebaseStage do
+    send_slack_message(msg:
+              "PIECE v" + android_get_version_name(gradle_file: "app/build.gradle.kts")+ " :rocket:" +
+              "\nVersionCode: " + android_get_version_code(gradle_file: "app/build.gradle.kts") +
+              "\n Firebase Distribution(Stage) 빌드 진행중입니다. 잠시만 기다려주세요. :hourglass_flowing_sand:"
+           )
+          gradle(task: "clean")
+          gradle(
+             task: ":app:assembleStage",
+             build_type: "Release"
+          )
+
+        firebase_app_distribution(
+                app: ENV['STAGE_APP_ID'],
+                groups: "AOS_QA_TESTER",
+                release_notes_file: "fastlane/release-notes.txt",
+                debug: true
+            )
+
+        send_slack_message(msg:
+                "PIECE v" + android_get_version_name(gradle_file: "app/build.gradle.kts")+ " :rocket:" +
+                "\nVersionCode: " + android_get_version_code(gradle_file: "app/build.gradle.kts") +
+                "\n Firebase Distribution(Stage) 배포가 완료되었습니다. :white_check_mark:"
+            )
+    end
+
+
+desc "파이어베이스 운영서버"
+  lane :firebaseReal do
+  send_slack_message(msg:
+               "PIECE v" + android_get_version_name(gradle_file: "app/build.gradle.kts")+ " :rocket:" +
+               "\nVersionCode: " + android_get_version_code(gradle_file: "app/build.gradle.kts") +
+               "\n Firebase Distribution(Real) 빌드 진행중입니다. 잠시만 기다려주세요. :hourglass_flowing_sand:"
+            )
+           gradle(task: "clean")
+           gradle(
+              task: ":app:assembleReal",
+              build_type: "Release"
+           )
+
+         firebase_app_distribution(
+                 app: ENV['REAL_APP_ID'],
+                 groups: "플랫폼실",
+                 release_notes_file: "fastlane/release-notes.txt",
+                 debug: true
+             )
+
+         send_slack_message(msg:
+                 "PIECE v" + android_get_version_name(gradle_file: "app/build.gradle.kts")+ " :rocket:" +
+                 "\nVersionCode: " + android_get_version_code(gradle_file: "app/build.gradle.kts") +
+                 "\n Firebase Distribution(Real) 배포가 완료되었습니다. :white_check_mark:"
+             )
+  end
+#################################################################################################################
+
+
+# Real APK Build ################################################################################################
+  desc "운영 APK"
+  lane :realApk do
+  send_slack_message(msg:
+     "PIECE v" + android_get_version_name(gradle_file: "app/build.gradle.kts")+ " :rocket:" +
+     "\nVersionCode: " + android_get_version_code(gradle_file: "app/build.gradle.kts") +
+     "\n빌드 진행중입니다. 잠시만 기다려주세요. :hourglass_flowing_sand:"
+  )
+  gradle(task: "clean")
+
+  gradle(
+     task: ":app:assembleReal",
+     build_type: "Release",
+  )
+  firebase_app_distribution(
+     app: ENV['REAL_APP_ID'],
+     groups: "AOS_QA_TESTER",
+     android_artifact_type: "APK",
+     debug: false
+  )
+
+
+  upload_to_play_store(
+     track: ENV['INTERNAL_TRACK']
+  )
+  send_slack_message(msg:
+      "PIECE v" + android_get_version_name(gradle_file: "app/build.gradle.kts")+ " :rocket:" +
+      "\nVersionCode: " + android_get_version_code(gradle_file: "app/build.gradle.kts") +
+       "\n배포가 완료되었습니다. :white_check_mark:"
+  )
+  end
+##############################################################################################################
+
+
+# Real Bundle Build ################################################################################################
+  desc "운영 번들"
+  lane :realAab do
+
+  send_slack_message(msg:
+          "PIECE v" + android_get_version_name(gradle_file: "app/build.gradle.kts")+ " :rocket:" +
+          "\nVersionCode: " + android_get_version_code(gradle_file: "app/build.gradle.kts") +
+          "\n빌드 진행중입니다. 잠시만 기다려주세요. :hourglass_flowing_sand:"
+       )
+
+    gradle(task: "clean")
+    gradle(
+       task: ":app:bundleReal",
+       build_type: "Release"
+    )
+
+    upload_to_play_store(
+        track: ENV["PRODUCTION"],
+        skip_upload_metadata: false,
+        skip_upload_changelogs: false,
+        skip_upload_images: true,
+        skip_upload_screenshots: true,
+        sync_image_upload: true,
+        aab: ENV["AAB_PATH"]
+    )
+
+    send_slack_message(msg:
+        "PIECE v" + android_get_version_name(gradle_file: "app/build.gradle.kts")+ " :rocket:" +
+        "\nVersionCode: " + android_get_version_code(gradle_file: "app/build.gradle.kts") +
+        "\n배포가 완료되었습니다. :white_check_mark:"
+    )
+  end
+##############################################################################################################
+
+# Common ########################################################################################
+  desc "버전 업데이트"
+  lane :app_version_update do
+   android_set_version_name(
+        version_name: "2.2.2",
+        gradle_file: "app/build.gradle.kts"
+   )
+   android_get_version_name(
+        gradle_file: "app/build.gradle.kts"
+   )
+   android_set_version_code(
+        version_code: 80,
+        gradle_file: "app/build.gradle.kts"
+   )
+   android_get_version_code(
+        gradle_file: "app/build.gradle.kts"
+   )
+  end
+
+  lane :send_slack_message do |options|
+  slack(
+    message: options[:msg],
+    slack_url: ENV['WEBHOOK_URL'],
+    success: true,
+    payload: {
+      "Build Date" => Time.new.to_s,
+    },
+    default_payloads: [:git_branch, :git_author, :last_git_commit]
+  )
+  end
+
+  error do |lane, exception|
+    slack(
+      message: "Build Fail : " + exception.message,
+      success: false,
+      slack_url: ENV['WEBHOOK_URL']
+    )
+  end
+##############################################################################################################
+
+
+#### 추후 사용
+#     latest_release = firebase_app_distribution_get_latest_release(
+#        app: ENV['REAL_APP_ID']
+#     )
+#      increment_version_code({ version_code: latest_release[:buildVersion].to_i + 1 })
+end

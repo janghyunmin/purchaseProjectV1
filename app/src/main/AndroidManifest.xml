@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="run.piece.dev"
+    tools:ignore="LockedOrientationActivity">
+    <!-- android 13... -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" /> <!-- ...android 13 -->
+    <!-- android 12... -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" /> <!-- <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" -->
+    <!-- tools:ignore="ScopedStorage" /> -->
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" /> <!-- 수정 필요... -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="false"
+        android:enableOnBackInvokedCallback="true"
+        android:fullBackupContent="false"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/app_icon_re"
+        android:label="${app_label}"
+        android:requestLegacyExternalStorage="true"
+        android:resizeableActivity="false"
+        android:roundIcon="@drawable/app_icon_re"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TransparentStatusBar"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:allowBackup">
+
+        <activity
+            android:name=".refactoring.ui.common.ServerCheckActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:launchMode="singleTask"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".refactoring.ui.newinvestment.InvestmentSubSurveyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".refactoring.ui.newinvestment.InvestmentIntroActivity"
+            android:exported="false" />
+        <activity
+            android:name=".refactoring.ui.newinvestment.InvestmentActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".refactoring.ui.consent.NewConsentActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".refactoring.ui.notification.NewNotificationSettingActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".refactoring.ui.info.NewMyInfoActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".refactoring.ui.certification.NewCertificationActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".refactoring.ui.portfolio.detail.PortfolioDetailNewActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="image/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="image/*" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".refactoring.ui.splash.SplashActivity"
+            android:configChanges="screenSize|screenLayout"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".refactoring.ui.deeplink.SchemeActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="piece" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".refactoring.ui.portfolio.detail.portfolioguide.disclosure.DisclosureTabActivity" />
+        <activity
+            android:name=".refactoring.base.html.BaseWebViewActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter
+                android:icon="@drawable/app_icon_re"
+                android:label="event">
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".refactoring.ui.portfolio.detail.disclosuredata.DisclosureSearchActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".refactoring.ui.portfolio.detail.disclosuredata.DisclosureWebViewActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
+        <meta-data
+            android:name="com.naver.maps.map.CLIENT_ID"
+            android:value="7ovr6him0s" />
+
+        <service
+            android:name=".firebase.MyFirebaseMessagingService"
+            android:exported="true"
+            android:stopWithTask="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/app_icon_re" /> <!-- Android Q(10) 폴더블 이상 화면 멈춤 대응 -->
+        <meta-data
+            android:name="android.allow_multiple_resumed_activities"
+            android:value="true" />
+
+        <activity
+            android:name=".refactoring.ui.newinvestment.InvestMentLoadingActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".refactoring.ui.newinvestment.InvestMentResultActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".refactoring.ui.portfolio.detail.assets.detailasset.objectinfo.PortfolioObjectInfoActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".refactoring.ui.portfolio.detail.assets.detailasset.PortfolioDetailAssetActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".refactoring.ui.faq.FaqTabActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".refactoring.base.BasePdfActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".refactoring.ui.portfolio.detail.pdf.PurchaseManualPdfActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".refactoring.ui.deed.DeedPdfActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".refactoring.ui.map.MapActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.common.NetworkActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.common.ErrorActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.common.LoginChkActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".refactoring.ui.intro.IntroActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".refactoring.ui.join.NewJoinActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".refactoring.ui.join.NewJoinSuccessActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".refactoring.ui.passcode.NewPassCodeActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".refactoring.ui.main.MainActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".refactoring.ui.purchase.PurchaseRenewalActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".refactoring.ui.magazine.NewMagazineDetailWebViewActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter
+                android:icon="@drawable/app_icon_re"
+                android:label="portfolio">
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".refactoring.ui.bookmark.NewBookMarkActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".refactoring.ui.notice.NoticeActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".refactoring.ui.event.EventActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".refactoring.ui.deletemember.DeleteMemberActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".refactoring.ui.deletemember.DeleteMemberDetailActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".refactoring.ui.deletemember.DeleteMemberSuccessActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".refactoring.ui.question.QuestionActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.withdrawal.WithdrawalActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.withdrawal.WithdrawalNextActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.withdrawal.WithdrawSuccessActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.withdrawal.WithdrawFailActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.bank.BankSelectActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.bank.BankRegisterActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".view.bank.BankRegisterSuccessActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" /> <!-- <activity -->
+
+        <activity
+            android:name=".refactoring.ui.deposit.NewDepositHistoryActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".refactoring.ui.purchase.NewPurchaseDetailActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".view.deed.DeedActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".refactoring.ui.alarm.AlarmActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.purchase.PurchaseResultActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.authentication.AuthenticationActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".refactoring.ui.logout.LogoutActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
+        <meta-data
+            android:name="com.naver.maps.map.CLIENT_ID"
+            android:value="7ovr6him0s" />
+
+        <service
+            android:name=".firebase.MyFirebaseMessagingService"
+            android:exported="true"
+            android:stopWithTask="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/app_icon_re" /> <!-- Android Q(10) 폴더블 이상 화면 멈춤 대응 -->
+        <meta-data
+            android:name="android.allow_multiple_resumed_activities"
+            android:value="true" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_paths" />
+        </provider>
+    </application>
+
+</manifest>

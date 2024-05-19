@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".refactoring.ui.newinvestment.InvestmentActivity">
+
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+            name="activity"
+            type="run.piece.dev.refactoring.ui.newinvestment.InvestmentActivity" />
+
+        <variable
+            name="vm"
+            type="run.piece.dev.refactoring.ui.newinvestment.InvestmentViewModel" />
+
+        <variable
+            name="vo"
+            type="run.piece.domain.refactoring.investment.model.InvestmentQuestionVo" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/back_layout"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="6dp"
+                android:onClick="@{() -> activity.goBackStack()}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/ic_x24_arrow_left_black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/progress_bar"
+                android:layout_width="210dp"
+                android:layout_height="4dp"
+                app:layout_constraintStart_toEndOf="@+id/back_layout"
+                app:layout_constraintEnd_toStartOf="@+id/close_layout"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:showDelay="1000"
+                app:trackCornerRadius="20dp"
+                app:indicatorColor="@color/p500_10CFC9"
+                app:trackColor="@color/g300_EAECF0" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/close_layout"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="10dp"
+                android:onClick="@{() -> activity.showClosePopup()}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/ic_close_x"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/warning_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="warning_iv, warning_tv" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/warning_iv"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/question_title_layout"
+            app:srcCompat="@drawable/warning_icon_x16" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/warning_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:layout_marginStart="4dp"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/warning_iv"
+            app:layout_constraintTop_toTopOf="@+id/warning_iv"
+            style="@style/body_2" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/icon_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/warning_tv">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/icon_iv_1"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/icon_x48_elder" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title_tv_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/investment_step_1_guide_title_1"
+                android:textColor="@color/c_292a2e"
+                app:layout_constraintBottom_toBottomOf="@+id/icon_iv_1"
+                app:layout_constraintStart_toEndOf="@+id/icon_iv_1"
+                app:layout_constraintTop_toTopOf="@+id/icon_iv_1"
+                style="@style/text_600_16_20_center"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/icon_iv_2"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/icon_iv_1"
+                app:srcCompat="@drawable/icon_x48_child" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title_tv_2"
+                style="@style/text_600_16_20_center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/investment_step_1_guide_title_2"
+                android:textColor="@color/c_292a2e"
+                app:layout_constraintBottom_toBottomOf="@+id/icon_iv_2"
+                app:layout_constraintStart_toEndOf="@+id/icon_iv_2"
+                app:layout_constraintTop_toTopOf="@+id/icon_iv_2" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/icon_iv_3"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/icon_iv_2"
+                app:srcCompat="@drawable/icon_x48_awesome" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title_tv_3"
+                style="@style/text_600_16_20_center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/investment_step_1_guide_title_3"
+                android:textColor="@color/c_292a2e"
+                app:layout_constraintBottom_toBottomOf="@+id/icon_iv_3"
+                app:layout_constraintStart_toEndOf="@+id/icon_iv_3"
+                app:layout_constraintTop_toTopOf="@+id/icon_iv_3" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/question_title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/top_layout">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/question_title_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:alpha="1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                style="@style/display_2" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/question_title_back_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:alpha="0"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                style="@style/display_2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="48dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/warning_tv"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/investment_rv"
+                android:overScrollMode="never"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        </ScrollView>
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/ok_cancel_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="ok_cv, cancel_cv"
+            android:visibility="gone"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/ok_cv"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="10dp"
+            android:onClick="@{() -> activity.goSubSurvey()}"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/cancel_cv"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.5">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/investment_common_btn_1"
+                android:background="@color/g300_EAECF0"
+                android:textColor="@color/g700_757983"
+                style="@style/text_700_16_25_center"/>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cancel_cv"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="16dp"
+            android:onClick="@{() -> activity.startInvestment()}"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ok_cv"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.5">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/investment_common_btn_2"
+                android:background="@color/p500_10CFC9"
+                android:textColor="@color/white"
+                style="@style/text_700_16_25_center"/>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/next_cv"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:visibility="gone"
+            android:onClick="@{() -> activity.nextPage()}"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="parent">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/next_tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/confirm_btn_next_title"
+                android:background="@color/p500_10CFC9"
+                android:textColor="@color/white"
+                style="@style/text_700_16_25_center"/>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/result_cv"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:visibility="gone"
+            android:clickable="false"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="parent">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/result_tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/investment_last_btn_title"
+                android:background="@color/g400_DADCE3"
+                android:textColor="@color/white"
+                style="@style/text_700_16_25_center"/>
+        </androidx.cardview.widget.CardView>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/top_layout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:lottie_fileName="piece_loading.json"
+            app:lottie_loop="true"
+            app:lottie_autoPlay="true"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

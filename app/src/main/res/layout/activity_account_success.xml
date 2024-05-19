@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="activity"
+            type="run.piece.dev.view.withdrawal.WithdrawSuccessActivity" />
+
+        <!-- 예치금 잔액 ViewModel -->
+        <variable
+            name="depositVm"
+            type="run.piece.dev.data.viewmodel.DepositBalanceViewModel" />
+
+        <!-- 회원 계좌 정보 조회 ViewModel -->
+        <variable
+            name="memberAccountVm"
+            type="run.piece.dev.data.viewmodel.AccountViewModel" />
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".view.withdrawal.WithdrawSuccessActivity">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/withdraw_lottie_iv"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="155dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title_tv"
+            app:layout_constraintTop_toBottomOf="@+id/withdraw_lottie_iv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/success_account_text"
+            android:textSize="26dp"
+            android:lineHeight="34dp"
+            android:textColor="@color/c_131313"
+            android:fontFamily="@font/pretendard_regular"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/sub_title_tv"
+            app:layout_constraintTop_toBottomOf="@+id/title_tv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/success_account_sub_text"
+            android:textSize="14dp"
+            android:lineHeight="20dp"
+            android:textColor="@color/c_8c919f"
+            android:fontFamily="@font/pretendard_regular"
+            />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/account_layout"
+            app:layout_constraintBottom_toTopOf="@+id/confirm_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/layout_round_f9f9f9"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/bank_icon_iv"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginStart="15dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/account_title_tv"
+                app:layout_constraintStart_toEndOf="@+id/bank_icon_iv"
+                app:layout_constraintTop_toTopOf="@+id/bank_icon_iv"
+                android:layout_marginStart="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text="@string/success_account_sub_text_2"
+                android:textSize="14dp"
+                android:lineHeight="20dp"
+                android:fontFamily="@font/pretendard_bold"
+                android:textColor="@color/c_757983"
+                android:gravity="center"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/account_number_tv"
+                app:layout_constraintTop_toBottomOf="@+id/account_title_tv"
+                app:layout_constraintStart_toEndOf="@+id/bank_icon_iv"
+                android:layout_marginStart="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="16dp"
+                android:textColor="@color/c_757983"
+                android:textSize="12dp"
+                android:lineHeight="20dp"
+                android:gravity="center"
+                android:fontFamily="@font/pretendard_regular"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/confirm_btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/layout_round_10cfc9"
+            android:gravity="center"
+            android:lineHeight="25dp"
+            android:text="@string/confirm_text"
+            android:textColor="@drawable/j_selector_text_color"
+            android:textSize="14dp"
+            app:fontFamily="@font/pretendard_bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".refactoring.ui.certification.NewCertificationActivity">
+
+    <data>
+        <variable
+            name="activity"
+            type="run.piece.dev.refactoring.ui.certification.NewCertificationActivity" />
+        <variable
+            name="viewModel"
+            type="run.piece.dev.refactoring.ui.certification.CertificationViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/top_back_iv"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:onClick="@{() -> activity.finish()}"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/top_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/more_title_5"
+            android:textColor="@color/c_4a4d55"
+            android:textSize="16dp"
+            android:lineHeight="25dp"
+            app:fontFamily="@font/pretendard_regular"
+            app:layout_constraintBottom_toBottomOf="@+id/top_back_iv"
+            app:layout_constraintTop_toTopOf="@+id/top_back_iv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/back_img"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/top_back_iv"
+            app:layout_constraintBottom_toBottomOf="@+id/top_back_iv">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_x24_arrow_left_black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/info_tv"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:fontFamily="@font/pretendard_bold"
+            android:gravity="left|center"
+            android:lineHeight="25dp"
+            android:textSize="16dp"
+            android:text="@string/access_title"
+            android:textColor="@color/g800_4A4D55"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintEnd_toEndOf="@+id/top_back_iv"
+            app:layout_constraintStart_toStartOf="@+id/top_back_iv"
+            app:layout_constraintTop_toBottomOf="@+id/top_back_iv" />
+
+        <View
+            android:id="@+id/info_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/g200_F2F3F4"
+            app:layout_constraintTop_toBottomOf="@+id/info_tv"
+            app:layout_constraintStart_toStartOf="@+id/info_tv"
+            app:layout_constraintEnd_toEndOf="@+id/info_tv"/>
+
+        <!-- 생체인증 사용 layout Start -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/biometric_layout"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/info_line"
+            app:layout_constraintStart_toStartOf="@+id/info_line"
+            app:layout_constraintEnd_toEndOf="@+id/info_line">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/biometric_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/pretendard_regular"
+                android:lineHeight="25dp"
+                android:textSize="16dp"
+                android:text="@string/bio_text"
+                android:textColor="@color/g800_4A4D55"
+                android:maxLines="1"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/switch_view"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switch_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:switchMinWidth="24dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/biometric_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/g200_F2F3F4"
+            app:layout_constraintStart_toStartOf="@+id/biometric_layout"
+            app:layout_constraintEnd_toEndOf="@+id/biometric_layout"
+            app:layout_constraintTop_toBottomOf="@+id/biometric_layout" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/password_back_iv"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/biometric_line"
+            android:onClick="@{() -> activity.passwordChande()}"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/password_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_regular"
+            android:gravity="left|center"
+            android:lineHeight="25dp"
+            android:textSize="16dp"
+            android:text="@string/pass_text"
+            android:textColor="@color/g800_4A4D55"
+            android:maxLines="1"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintStart_toStartOf="@+id/password_back_iv"
+            app:layout_constraintEnd_toStartOf="@+id/go_passwrod_layout"
+            app:layout_constraintTop_toTopOf="@+id/password_back_iv"
+            app:layout_constraintBottom_toBottomOf="@+id/password_back_iv"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/go_passwrod_layout"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintTop_toTopOf="@+id/password_back_iv"
+            app:layout_constraintBottom_toBottomOf="@+id/password_back_iv"
+            app:layout_constraintEnd_toEndOf="@+id/password_back_iv">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/password_arrow_iv"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/arrow_right"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/gray_view"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/g200_F2F3F4"
+            app:layout_constraintTop_toBottomOf="@+id/password_back_iv"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/delete_title_tv"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:fontFamily="@font/pretendard_bold"
+            android:text="@string/delete_text"
+            android:textColor="@color/g800_4A4D55"
+            android:textSize="16dp"
+            android:lineHeight="25dp"
+            android:gravity="center_vertical"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/gray_view"/>
+
+        <View
+            android:id="@+id/delete_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/g200_F2F3F4"
+            app:layout_constraintStart_toStartOf="@+id/delete_title_tv"
+            app:layout_constraintEnd_toEndOf="@+id/delete_title_tv"
+            app:layout_constraintTop_toBottomOf="@+id/delete_title_tv"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/delete_back_iv"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/delete_line"
+            android:onClick="@{() -> activity.deleteMember()}"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/delete_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_regular"
+            android:lineHeight="25dp"
+            android:textSize="16dp"
+            android:text="@string/member_delete"
+            android:textColor="@color/g800_4A4D55"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@+id/delete_back_iv"
+            app:layout_constraintTop_toTopOf="@+id/delete_back_iv"
+            app:layout_constraintBottom_toBottomOf="@+id/delete_back_iv"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/go_delete_layout"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintTop_toTopOf="@+id/delete_back_iv"
+            app:layout_constraintBottom_toBottomOf="@+id/delete_back_iv"
+            app:layout_constraintEnd_toEndOf="@+id/delete_back_iv">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/delete_arrow_iv"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/arrow_right"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

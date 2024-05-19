@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="activity"
+            type="run.piece.dev.refactoring.ui.intro.IntroActivity"/>
+        <variable
+            name="dataStoreViewModel"
+            type="run.piece.dev.refactoring.datastore.DataNexusViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/icon_iv"
+            android:layout_marginTop="48dp"
+            android:layout_width="81dp"
+            android:layout_height="24dp"
+            android:background="@drawable/ic_x24_logo_intro"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/icon_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="더 쉽고 안전하게\n부자되는 투자 제안"
+            android:textColor="#282828"
+            android:gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="@+id/icon_iv"
+            app:layout_constraintEnd_toEndOf="@+id/icon_iv"
+            app:layout_constraintTop_toBottomOf="@+id/icon_iv"
+            style="@style/display_1"/>
+
+        <VideoView
+            android:id="@+id/video_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/i_button"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:text="@string/intro_title_2"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:background="@drawable/j_btn_text_back"
+            app:fontFamily="@font/pretendard_extrabold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/piece_text"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/piece_text"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="@string/i_beta_text"
+            android:textSize="16dp"
+            android:lineHeight="25dp"
+            android:textColor="@color/g600_8C919F"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:fontFamily="@font/pretendard_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

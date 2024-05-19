@@ -1,0 +1,39 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.TransparentStatusBar" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Android12 SplashScreen Setting -->
+        <item name="windowSplashScreenBackground">@color/c_ffffff</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/app_icon_re</item>
+        <item name="postSplashScreenTheme">@style/Theme.TransparentStatusBar</item>
+        <!-- Android12 SplashScreen Setting -->
+
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimaryDark">@android:color/transparent</item>
+
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+        <item name="android:windowActivityTransitions">true</item> <!-- recyclerview animation 처리 -->
+
+        <!-- Status bar color. -->
+        <item name="android:windowTranslucentStatus">false</item> <!-- StatusBar 를 반투명하게 설정한다. -->
+        <item name="android:statusBarColor">@color/trans</item> <!-- StatusBar 색상 -->
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+
+        <item name="android:textViewStyle">@style/customTextViewFontStyle</item>
+        <item name="android:buttonStyle">@style/customButtonFontStyle</item>
+        <item name="android:editTextStyle">@style/customEditTextFontStyle</item>
+        <item name="android:radioButtonStyle">@style/customRadioButtonFontStyle</item>
+        <item name="android:checkboxStyle">@style/customCheckboxFontStyle</item>
+        <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialogTheme</item>
+    </style>
+
+    <!-- Theme -->
+    <style name="CustomChipChoice" parent="@style/Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/c_cff5f4</item>
+        <item name="android:textColor">@color/g900_292A2E</item>
+    </style>
+    <!-- Theme -->
+
+
+</resources>

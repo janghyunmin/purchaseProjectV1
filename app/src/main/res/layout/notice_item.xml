@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="item"
+            type="run.piece.domain.refactoring.notice.model.NoticeItemVo" />
+
+        <variable
+            name="vm"
+            type="run.piece.dev.refactoring.ui.notice.NoticeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/notice_date_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12dp"
+            android:lineHeight="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/pretendard_regular"
+            android:textColor="@color/g500_B8BCC8"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/notice_title_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:lineHeight="25dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/pretendard_bold"
+            android:textColor="@color/g800_4A4D55"
+            android:text="@{item.title}"
+            app:layout_constraintTop_toBottomOf="@+id/notice_date_tv"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/g200_F2F3F4"
+            app:layout_constraintTop_toBottomOf="@+id/notice_title_tv" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

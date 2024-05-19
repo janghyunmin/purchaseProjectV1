@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="activity"
+            type="run.piece.dev.refactoring.ui.portfolio.detail.disclosuredata.DisclosureSearchActivity" />
+
+        <variable
+            name="vm"
+            type="run.piece.dev.refactoring.ui.portfolio.detail.disclosuredata.DisclosureSearchViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/back_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:padding="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_x24_arrow_left_black" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/search_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:visibility="visible"
+                app:layout_constraintTop_toTopOf="@id/search_touch_layout"
+                app:layout_constraintBottom_toBottomOf="@id/search_touch_layout"
+                app:layout_constraintStart_toEndOf="@+id/back_iv"
+                app:layout_constraintEnd_toStartOf="@+id/search_touch_layout">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/search_et"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="제목을 입력해 주세요."
+                    android:inputType="text"
+                    android:maxLength="30"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:privateImeOptions="korean"
+                    style="@style/text_400_16_26_left_center"
+                    android:textColorHint="@color/c_8c919f"
+                    android:textColor="@color/c_4a4d55"
+                    android:focusableInTouchMode="true"
+                    android:focusable="true"
+                    android:cursorVisible="true"
+                    android:background="@null"
+                    android:imeOptions="actionDone"
+                    android:layout_marginEnd="4dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/clear_touch_layout" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clear_touch_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    app:layout_constraintTop_toTopOf="@id/search_et"
+                    app:layout_constraintBottom_toBottomOf="@+id/search_et"
+                    app:layout_constraintEnd_toEndOf="parent" >
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/clear_iv"
+                        android:background="@drawable/clear_icon_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/search_touch_layout"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginEnd="4dp"
+                android:padding="10dp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/back_iv"
+                app:layout_constraintBottom_toBottomOf="@+id/back_iv">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/search_btn"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:adjustViewBounds="true"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_x24_search"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/recent_search_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/top_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/recent_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/text_600_14_18_left"
+                android:textColor="@color/c_8c919f"
+                android:text="최근 검색어"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginBottom="21dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/all_delete_touch_layout"
+                />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/all_delete_touch_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:layout_marginEnd="8dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:background="@drawable/bg_f9f9f9_8dp_default"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/recent_tv"
+                app:layout_constraintBottom_toBottomOf="@id/recent_tv"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/all_delete_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/text_400_14_22_center"
+                    android:text="@string/delete_underline"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 최근 검색 내역이 없을때 Layout -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/no_search_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/recent_search_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/no_search_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="40dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                style="@style/text_400_16_26_center"
+                android:text="최근 검색한 내역이 없어요"
+                android:textColor="@color/c_8c919f"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 검색한 리스트 RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/search_rv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            android:nestedScrollingEnabled="false"
+            android:overScrollMode="never"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recent_search_layout" />
+
+        <!-- 공시 탭 Layout -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/tab_parent_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@+id/top_layout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+
+            <View
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/c_dadce3"
+                app:layout_constraintTop_toBottomOf="@+id/tab_layout" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:tabIndicatorColor="@color/g900_292A2E"
+                app:tabIndicatorFullWidth="false"
+                app:tabIndicatorHeight="2dp"
+                app:tabIndicatorAnimationMode="elastic"
+                app:tabTextColor="@color/g500_B8BCC8"
+                app:tabIndicator="@drawable/custom_tab_indicator"
+                app:tabSelectedTextColor="@color/g900_292A2E"
+                app:tabTextAppearance="@style/title_2"
+                app:tabGravity="fill"
+                app:tabMode="fixed"
+                app:tabMaxWidth="0dp"
+                app:tabRippleColor="@color/trans">
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/quarterly_tab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="경영공시" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/unspecified_tab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="투자공시" />
+
+            </com.google.android.material.tabs.TabLayout>
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/management"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tab_layout"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"/>
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/investment"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tab_layout"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/loading_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            app:indicatorDirectionCircular="clockwise"
+            app:indicatorColor="@color/c_10cfc9"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

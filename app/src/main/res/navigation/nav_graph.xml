@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?><!--suppress NavigationFile -->
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/item_home">
+
+    <keep_state_fragment
+        android:id="@+id/item_home"
+        android:name="run.piece.dev.view.fragment.FragmentHome"
+        tools:layout="@layout/fragment_home">
+    </keep_state_fragment>
+
+    <keep_state_fragment
+        android:id="@+id/item_magazine"
+        android:name="run.piece.dev.refactoring.ui.magazine.NewFragmentMagazine"
+        tools:layout="@layout/new_fragment_magazine">
+    </keep_state_fragment>
+
+    <keep_state_fragment
+        android:id="@+id/item_wallet"
+        android:name="run.piece.dev.refactoring.ui.wallet.NewFragmentWallet"
+        tools:layout="@layout/new_fragment_wallet">
+
+        <argument
+            android:name="memberId"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+    </keep_state_fragment>
+
+    <keep_state_fragment
+        android:id="@+id/item_more"
+        android:name="run.piece.dev.refactoring.ui.more.NewFragmentMore"
+        tools:layout="@layout/fragment_new_more">
+
+        <argument
+            android:name="memberId"
+            android:defaultValue="false"
+            app:argType="boolean" />
+    </keep_state_fragment>
+
+</navigation>

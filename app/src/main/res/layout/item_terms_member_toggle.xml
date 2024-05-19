@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="adapter"
+            type="run.piece.dev.refactoring.ui.consent.TermsMemberRvAdapter" />
+        <variable
+            name="vo"
+            type="run.piece.domain.refactoring.consent.model.TermsMemberListItemVo" />
+        <variable
+            name="vh"
+            type="run.piece.dev.refactoring.ui.consent.TermsMemberRvAdapter.ToggleVH" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> adapter.detailClick(vo)}">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/content_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintBottom_toBottomOf="@+id/agree_switch"
+            app:layout_constraintEnd_toStartOf="@+id/agree_switch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/agree_switch">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/content_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/g900_292A2E"
+                android:text="@{vo.consentTitle}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constrainedWidth="true"
+                style="@style/body_1"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/content_sub_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/g600_8C919F"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/content_tv"
+                style="@style/body_2"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/agree_switch"
+            android:layout_width="44dp"
+            android:layout_height="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constrainedWidth="true"
+            app:switchMinWidth="24dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="verification" type="Boolean" />
+        <variable name="dialog" type="run.piece.dev.refactoring.ui.join.dialog.JoinBDF" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/j_dialog_back_round"
+        android:animateLayoutChanges="true"
+        app:behavior_hideable="true"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/rect_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:srcCompat="@drawable/ic_rect"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/terms_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/c_top_title"
+            android:textColor="@color/g900_292A2E"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rect_iv"
+            style="@style/title_1"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/all_check_box_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/terms_title_tv">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/all_check_box_iv"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                app:srcCompat="@drawable/ic_x28_check_circle_dadce3"
+                app:layout_constraintTop_toTopOf="@+id/all_check_tv"
+                app:layout_constraintBottom_toBottomOf="@+id/all_check_tv"
+                app:layout_constraintEnd_toStartOf="@+id/all_check_tv"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/all_check_tv"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                android:text="@string/c_all_agree"
+                android:textColor="@color/g900_292A2E"
+                app:layout_constraintStart_toEndOf="@+id/all_check_box_iv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                style="@style/title_2"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/line_1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/g200_F2F3F4"
+            app:layout_constraintTop_toBottomOf="@+id/all_check_box_layout" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/consent_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line_1"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/terms_cv"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="24dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@{verification ? @color/p500_10CFC9 : @color/g400_DADCE3 }"
+            app:layout_constraintTop_toBottomOf="@+id/consent_rv"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:lineHeight="25dp"
+                android:textSize="16dp"
+                android:text="@string/ok_next_step_txt"
+                android:textColor="@color/white"
+                app:fontFamily="@font/pretendard_bold"
+                app:layout_constraintTop_toBottomOf="@+id/phone_num_tv" />
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

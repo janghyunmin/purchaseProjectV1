@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="adapter"
+            type="run.piece.dev.refactoring.ui.consent.NewConsentRvAdapter" />
+        <variable
+            name="vo"
+            type="run.piece.domain.refactoring.consent.model.ConsentVo" />
+        <variable
+            name="vh"
+            type="run.piece.dev.refactoring.ui.consent.NewConsentRvAdapter.ConsentVH" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/c_common"
+            android:textColor="@color/g800_4A4D55"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:textSize="16dp"
+            android:lineHeight="25dp"
+            app:fontFamily="@font/pretendard_regular"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/content_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineHeight="25dp"
+            android:textSize="16dp"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/g800_4A4D55"
+            android:maxLines="1"
+            android:text="@{vo.consentTitle}"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintHorizontal_bias="0"
+            app:fontFamily="@font/pretendard_regular"
+            app:layout_constraintTop_toTopOf="@+id/detail_layout"
+            app:layout_constraintBottom_toBottomOf="@+id/detail_layout"
+            app:layout_constraintEnd_toStartOf="@+id/detail_layout"
+            app:layout_constraintStart_toEndOf="@+id/text"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/detail_layout"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:onClick="@{() -> adapter.detailClick(vo)}">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/arrow_right"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

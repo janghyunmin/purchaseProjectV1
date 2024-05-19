@@ -1,0 +1,831 @@
+<resources>
+    <string name="company_name_txt">바이셀스탠다드</string>
+
+    <!-- Server 점검 -->
+    <string name="inspection_title">지금은 서비스 점검 중이에요</string>
+    <string name="inspection_content">보다 안정적인 PIECE 서비스를 제공하기 위해\n시스템 점검을 진행하고 있습니다.\n서비스 이용에 불편을 드려 죄송합니다</string>
+
+    
+    <!-- DeepLink Uri -->
+    <string name="scheme_host_main">MainActivity</string>
+    <string name="scheme_host_detail">PortfolioDetailNewActivity</string>
+
+    <!-- url deep link scheme start -->
+    <string name="scheme_host_splash">splash</string>
+    <string name="scheme_host_magazine_post">magazinePost</string>
+    <string name="scheme_host_portfolio">portfolio</string>
+    <string name="scheme_host_event">event</string>
+    <string name="scheme_host_notice">notice</string>
+    <string name="scheme_host_alarm">alarm</string>
+
+    <string name="scheme_host_home">home</string>
+    <string name="scheme_host_magazine">magazine</string>
+    <string name="scheme_host_wallet">wallet</string>
+    <string name="scheme_host_more">more</string>
+    <!-- url deep link scheme end -->
+
+    <string name="scheme_host_plc0101">PLC0101</string>
+    <string name="scheme_host_plc0102">PLC0102</string>
+    <string name="scheme_host_plc0103">PLC0103</string>
+    <string name="scheme_host_plc0104">PLC0104</string>
+    <string name="scheme_host_plc0105">PLC0105</string>
+    <string name="scheme_host_plc0106">PLC0106</string>
+    <string name="scheme_host_plc0107">PLC0107</string>
+
+    <!-- 미리 구현해 놓은 PDF, WebView 푸시 딥링크-->
+    <string name="scheme_host_plc0108">PLC0108</string>
+    <string name="scheme_host_plc0109">PLC0109</string>
+    <!-- push deep link scheme end -->
+
+    <!-- AppConfirmDF -->
+    <string name="see_more_txt">자세히 보기</string>
+
+    <!-- firebase -->
+    <string name="default_notification_channel_id">96071973609</string>
+
+    <!-- playstore url -->
+    <string name="playstore_url">market://details?id=run.piece.dev</string>
+    <string name="update_title_txt">업데이트 안내</string>
+    <string name="update_content_txt">새로운 버전이 업데이트되었어요. \n\n업데이트 버튼이 보이지 않는다면,\n기기 설정에서 Google Play 스토어의 캐시를 삭제해 주세요.</string>
+
+    <!-- dialog -->
+    <string name="confirm">확인</string>
+    <string name="cancle">취소</string>
+    <string name="back_txt">뒤로</string>
+    <string name="registration_btn_txt">등록</string>
+    <string name="unlock_txt">해제</string>
+    <string name="logout_txt">로그아웃</string>
+    <string name="revoke_txt">철회하기</string>
+    <string name="go_consent_txt">동의하러 가기</string>
+
+    <!-- dialog password -->
+    <string name="dismiss">닫기</string>
+
+    <!-- dialog Address -->
+
+    <!-- dialog Coupon -->
+
+    <!-- intro -->
+    <string name="i_beta_text"><u>서비스 둘러보기</u></string>
+
+    <!-- join -->
+    <string name="j_top_title">본인 확인</string>
+    <string name="j_sub_title">피스를 더 안전하게 이용하기 위한 절차예요.</string>
+    <string name="j_name_title">이름</string>
+    <string name="j_name_hint">이름 입력</string>
+    <string name="j_birth_title">생년월일</string>
+    <string name="j_birth_hint">ex) 19990617</string>
+    <string name="j_gender_title">성별</string>
+    <string name="j_gender_man">남자</string>
+    <string name="j_gender_woman">여자</string>
+    <string name="j_phone_title">통신사</string>
+    <string name="j_phone_hint">통신사 선택</string>
+    <string name="j_user_phone_title">휴대폰 번호</string>
+    <string name="j_user_phone_hint">하이픈(-) 없이 입력</string>
+    <string name="agency_01">SKT</string>
+    <string name="agency_02">KT</string>
+    <string name="agency_03">LG U+</string>
+    <string name="agency_04">SKT 알뜰폰</string>
+    <string name="agency_05">KT 알뜰폰</string>
+    <string name="agency_06">LG U+ 알뜰폰</string>
+    <string name="confirm_btn_title">확인</string>
+    <string name="confirm_btn_next_title">다음</string>
+
+    <!-- consentModel(약관) -->
+    <string name="c_top_title">약관 동의</string>
+    <string name="c_all_agree">전체 동의하기</string>
+    <string name="ok_next_step_txt">동의하고 계속하기</string>
+    <string name="c_common">[필수]</string>
+    <string name="c_select">[선택]</string>
+
+    <!-- 인증번호 입력 dialog -->
+    <string name="sms_title">인증번호 입력</string>
+    <string name="sms_hint">전송된 인증번호 입력</string>
+    <string name="sms_retry">재전송</string>
+
+    <!-- 간편 비밀번호 -->
+    <string name="passcode_title">간편 비밀번호 등록</string>
+    <string name="passcode_title_c">숫자 6자리를 입력해 주세요.</string>
+    <string name="passcode_title_verify">비밀번호가 일치하지 않아요.</string>
+    <string name="passcode_clear">초기화</string>
+
+    <string name="password_title">간편 비밀번호 등록</string>
+    <string name="password_title_input">간편 비밀번호 입력</string>
+    <string name="password_title_change">간편 비밀번호 재설정</string>
+
+    <string name="password_sub_title">숫자 6자리를 입력해 주세요.</string>
+    <string name="password_sub_re_title">한 번 더 입력해 주세요.</string>
+    <string name="password_sub_verify_title">비밀번호가 일치하지 않아요.</string>
+    <string name="password_sub_purchase_title">현재 비밀번호와 일치하지 않습니다.</string>
+    <string name="password_sub_not_equals">비밀번호가 맞지 않아요 (%1$s/5)</string>
+    <string name="password_sub_change_title">현재 비밀번호를 입력해 주세요.</string>
+    <string name="password_sub_change_next_title">새로운 비밀번호를 입력해 주세요.</string>
+    <string name="password_sub_verify_repeat_title">반복된 숫자는 비밀번호로 사용할 수 없어요</string>
+    <string name="password_sub_verify_continuous_title">연속된 숫자는 비밀번호로 사용할 수 없어요</string>
+    <string name="password_sub_verify_info_title">개인정보가 포함되는 숫자는 사용할 수 없어요</string>
+    <string name="password_sub_verify_equals_title">현재 비밀번호와 다르게 입력해 주세요</string>
+
+    <!-- 보안 강화 Modal Text -->
+    <string name="security_confirm_title">보안 강화 안내</string>
+    <string name="security_confirm_content">개인정보 보호를 위해 강화된 비밀번호를 \n사용하시는 것을 권장해 드려요.</string>
+    <string name="security_confirm_ok_title">지금 변경하기</string>
+    <string name="security_confirm_cancel_title">다음에 할게요</string>
+
+    <!-- 비밀번호 재설정 Modal Text -->
+    <string name="reset_pwd_title">비밀번호 재설정</string>
+    <string name="reset_pwd_content">오류 횟수 초과로 재설정이 필요해요.</string>
+    <string name="reset_pwd_btn_title">재설정</string>
+
+    <!-- 비밀번호 변경 완료 Modal Text -->
+    <string name="reset_success_pwd_title">비밀번호 변경 완료</string>
+    <string name="reset_success_pwd_content">확인을 누르면 설정으로 이동해요.</string>
+    <string name="reset_success_pwd_btn_title">확인</string>
+
+    <!-- 투자 성향 분석 -->
+    <string name="investment_intro_top_title">%1$s님의 투자성향 분석을 \n시작할게요</string>
+    <string name="investment_intro_start_btn_title">시작하기</string>
+    <string name="investment_intro_next_btn_title">다음에 하기</string>
+    <string name="investment_notice_top_title">취약투자자 유의사항 \n설명 확인서</string>
+    <string name="investment_notice_content_title_1">본 금융상품은 원금 손실 가능성이 있습니다.</string>
+    <string name="investment_notice_content_title_2">본 금융상품은 예금자보호법에 따라 예금보험공사가 보호하지 않습니다.</string>
+    <string name="investment_notice_content_title_3">본인은 귀사로부터 금융 취약투자자 유의사항을 우선적으로 설명 받았으며, 그 내용을 충분히 이해하였음을 확인합니다.</string>
+    <string name="investment_step_1_guide_title_1">만 65세 이상 고령투자자</string>
+    <string name="investment_step_1_guide_title_2">만 19세 이하 미성년자</string>
+    <string name="investment_step_1_guide_title_3">금융투자상품 투자 경험이 없는 분 등</string>
+    <string name="investment_common_btn_1">예</string>
+    <string name="investment_common_btn_2">아니오</string>
+    <string name="investment_modal_title">투자성향 분석 진행 중지</string>
+    <string name="investment_modal_content">지금 투자성향 분석을 멈추시면 \n답변하신 정보들이 사라져요.</string>
+    <string name="investment_modal_btn_stop_title">그만하기</string>
+    <string name="investment_modal_btn_continue_title">계속하기</string>
+    <string name="investment_loading_title">지금 투자성향을 \n분석 중이에요</string>
+    <string name="investment_last_btn_title">분석 결과 보기</string>
+    <string name="investment_result_top_title">%1$s님은 \n%2$s이에요</string>
+    <string name="investment_result_description_title">%1$s은 \n이런 투자성향을 가져요</string>
+    <string name="investment_result_product_title">이런 금융상품에 \n관심이 많아요</string>
+    <string name="investment_result_btn_retry_title">다시 분석하기</string>
+    <string name="investment_result_btn_product_title">더 많은 상품 만나보기</string>
+    <string name="investment_result_count_text">오늘 %1$s번 더 가능해요</string>
+    <string name="investment_result_over_text">오늘 분석 가능한 횟수를 초과했어요</string>
+    <string name="investment_more_item_title">투자 DNA</string>
+    <string name="investment_more_item_null_title">나의 투자성향은?</string>
+    <string name="investment_more_item_null_btn_title">성향분석</string>
+    <string name="investment_more_item_btn_title">결과보기</string>
+    <string name="investment_retry_count_text">오늘 %d번 더 가능해요</string>
+    <string name="investment_retry_not_available_text">오늘 분석 가능한 횟수를 초과했어요</string>
+    <string name="investment_error_title">투자성향 분석 오류</string>
+    <string name="investment_error_message">알 수 없는 에러가 발생했어요. 다시 시도해 주세요.</string>
+    <string name="investment_bottom_sheet_top_title">투자상품 위험 고지</string>
+    <string name="investment_bottom_sheet_middle_title">손실위험이 높은 상품은 \n%1$s에게 적합하지 않은 상품이에요. \n계속 진행하시겠어요?</string>
+    <string name="investment_bottom_sheet_confirm_btn_title">살펴볼게요</string>
+    <string name="investment_bottom_sheet_next_btn_title">다음에 할게요</string>
+
+
+    <string name="invest_result_1">공격투자형</string>
+    <string name="invest_result_2">적극투자형</string>
+    <string name="invest_result_3">위험중립형</string>
+    <string name="invest_result_4">안전추구형</string>
+    <string name="invest_result_5">안정형</string>
+
+    <!-- 메인 팝업 -->
+    <string name="p_today_close">오늘은 보지 않기</string>
+
+    <!-- 내정보 상세 -->
+    <string name="re_auth"><u>재인증</u></string>
+    <string name="address_register"><u>주소 등록</u></string>
+    <string name="email_register"><u>이메일 등록</u></string>
+
+    <string name="address_change"><u>주소 변경</u></string>
+    <string name="email_change"><u>이메일 변경</u></string>
+
+    <!-- 쿠폰함 -->
+    <string name="notice_text"><u>사용시 유의사항</u></string>
+
+    <!-- 가상계좌 충전 신청 완료 -->
+    <string name="copy_title"><u>복사하기</u></string>
+
+    <!-- 계좌 변경 문구 -->
+    <string name="account_change_title"><u>변경</u></string>
+
+
+    <!-- 소유증서 문구 -->
+
+
+    <string name="auth_notice"><u>개인정보 처리방침</u></string>
+
+    <string name="info_text">
+        조각 판매 후 해당 자산을 매각해 조각 구매자에게 발생한 차익을 조각 수에 비례하여 분배하기까지 걸리는 기간입니다.\n
+        운용 기간은 포트폴리오에 따라 미리 정해져 있습니다.\n
+        단, 해당 자산의 매각 상황에 따라 예정보다 빨리 분배되거나 운용 기간이 연장될 수 있습니다.\n
+    </string>
+
+    <string name="grade_text">
+        포트폴리오의 현재 자산 가치와 운용 기간 이후의 실현 가치 및 시세
+        상승률을 평가해 SS/S 2단계로 분류한 피스의 등급 체계입니다.\n
+        PIECE 종합등급은 자산 평가의 3가지 기준인 안정성, 환금성, 수익성을 종합적으로
+        분석해 부여합니다.\n
+    </string>
+    <string name="grade_text_1">
+        • 안정성 - 상품 가치에 대한 담보력
+    </string>
+    <string name="grade_text_2">
+        • 환금성 - 부실 발생 시 매각 가능성 또는 회수력
+    </string>
+    <string name="grade_text_3">
+        • 수익성 - 예상 시세 상승률
+    </string>
+
+    <!-- databinding -->
+    <string name="securities_non_txt">비증권</string>
+    <string name="securities_txt">증권</string>
+    <string name="investment_contract_security_text">투자계약증권</string>
+
+    <string name="access_title">정보 관리</string>
+    <string name="bio_text">생체인증 사용</string>
+    <string name="pass_text">간편비밀번호 변경</string>
+    <string name="member_delete">회원 탈퇴</string>
+    <string name="guide_confirm_text">확인을 누르면 첫 화면으로 이동해요</string>
+
+    <string name="noti_text">알림</string>
+    <string name="benefit_text">혜택</string>
+    <string name="alarm_guide_text">자산 변동과 거래에 대한 \n알림이 표시됩니다.</string>
+    <string name="alarm_guide_text_2">이벤트와 혜택에 대한 \n 알림이 표시됩니다.</string>
+    <string name="retry_text">다시 시도</string>
+    <string name="btn_retry_text">다시 시도하기</string>
+
+    <string name="receive_txt">받기</string>
+    <string name="confirm_text">확인</string>
+    <string name="first_title_txt">처음으로</string>
+    <string name="delete_text">탈퇴</string>
+    <string name="more_title_1">피스와 함께한지</string>
+    <string name="more_title_2">공지사항</string>
+    <string name="more_title_3">이벤트</string>
+    <string name="more_title_4">쿠폰함</string>
+    <string name="more_title_5">인증 및 보안</string>
+    <string name="more_title_6">문자 및 알림 수신 설정</string>
+    <string name="more_title_7">약관 및 개인정보 이용 동의</string>
+    <string name="more_title_8">자주 묻는 질문</string>
+    <string name="more_title_9">카카오톡 상담하기</string>
+    <string name="more_title_10">앱 버전</string>
+
+    <string name="go_email_text">이메일로 보내기</string>
+    <string name="go_address_text">우편으로 받기</string>
+
+    <string name="success_account_text">가상계좌가 발급되었어요</string>
+    <string name="success_account_sub_text">이제 조각투자를 시작할 준비가 되었어요.</string>
+    <string name="success_account_sub_text_2">연동된 계좌</string>
+
+    <string name="success_change_text">계좌 변경이 완료되었어요</string>
+    <string name="success_change_sub_text">계좌 정보를 아래와 같이 변경했어요.</string>
+    <string name="success_change_sub_text_2">변경된 연동계좌</string>
+
+    <string name="auth_title">실명 인증</string>
+    <string name="auth_sub_title">소득신고를 위해 주민등록번호를 수집・보관하고 있어요</string>
+    <string name="auth_bank_host_title">이름</string>
+    <string name="auth_bank_host_hint_title">김피스</string>
+    <string name="auth_bank_number">주민등록번호</string>
+
+    <string name="bookmark_title">북마크</string>
+    <string name="bookmark_empty_title">아직 저장한 글이 없어요.\n가장 빠른 재테크 소식을 알아볼까요?</string>
+    <string name="bookmark_magazine_go_btn_title">매거진 둘러보기</string>
+    <string name="new_consent_title_1">약관 및 개인정보 이용 동의</string>
+    <string name="new_marketing_title_1">[선택] 광고성 정보 활용 및 수신 동의</string>
+    <string name="coupon_text">쿠폰함</string>
+    <string name="coupon_text_1">나의 보유 쿠폰</string>
+    <string name="coupon_text_2">장</string>
+    <string name="btn_text">등록하기</string>
+
+    <string name="virtual_title">가상 계좌 생성</string>
+    <string name="virtual_title_1">가입된 휴대폰 번호로 가상 계좌번호를 생성합니다.</string>
+
+    <string name="account_text">가상계좌 만들기</string>
+    <string name="account_change_text">연동계좌 변경하기</string>
+    <string name="account_register_text">연동계좌 등록</string>
+    <string name="account_register_change_text">연동계좌 변경</string>
+    <string name="register_guide_text">연동하실 계좌의 번호를 입력해 주세요.</string>
+    <string name="change_text">변경</string>
+    <string name="account_title">계좌번호</string>
+    <string name="account_hint">하이픈( - ) 없이 입력</string>
+    <string name="account_register_title">가상계좌 만들기</string>
+    <string name="account_register_change_title_txt">계좌 변경하기</string>
+
+    <string name="virtual_1">이제,</string>
+    <string name="virtual_2">입금</string>
+    <string name="virtual_3">만 하시면</string>
+    <string name="virtual_4">충전</string>
+    <string name="virtual_5">이</string>
+    <string name="virtual_6">완료</string>
+    <string name="virtual_7">되요!</string>
+    <string name="virtual_8">입금하실 금액</string>
+    <string name="virtual_9">원</string>
+    <string name="virtual_10">김피스님의 가상계좌에요</string>
+    <string name="virtual_11">케이뱅크 01012345678</string>
+
+
+    <string name="address_title">주소 검색</string>
+    <string name="address_hint">주소를 입력해 주세요</string>
+    <string name="address_no_title">검색된 결과가 없어요.</string>
+    <string name="address_search">검색</string>
+
+    <string name="logout_title">안전하게\n로그아웃 되었어요</string>
+    <string name="logout_title_1">이용하시려면 다시 로그인해 주세요.</string>
+    <string name="retry_logout_title">다시 로그인 하기</string>
+
+    <string name="deed_title">소유 증서</string>
+    <string name="withdraw_title">출금하기</string>
+    <string name="withdraw_title_1">연동된 내 계좌</string>
+    <string name="withdraw_title_2">로</string>
+    <string name="withdraw_title_3">출금 가능 금액</string>
+    <string name="withdraw_title_4">이 계좌로 입금돼요.</string>
+
+    <string name="number_1">1</string>
+    <string name="number_2">2</string>
+    <string name="number_3">3</string>
+    <string name="number_4">4</string>
+    <string name="number_5">5</string>
+    <string name="number_6">6</string>
+    <string name="number_7">7</string>
+    <string name="number_8">8</string>
+    <string name="number_9">9</string>
+    <string name="number_0">0</string>
+
+    <string name="time_text">유효기간 :</string>
+
+    <string name="withdraw_fail_title">출금에 실패했어요</string>
+    <string name="withdraw_success_title">출금이 완료되었어요</string>
+    <string name="withdraw_success_title_1">연동된 %s 계좌에서 \n 입금액을 확인해 주세요.</string>
+    <string name="network_title">네트워크 오류로 출금에 실패했어요 \n 잠시후 다시 시도해주세요</string>
+    <string name="withdraw_fail_title_txt">잠시 후 다시 시도해주세요.</string>
+
+    <string name="address_item_title">도로명</string>
+    <string name="address_item_title_1">지번</string>
+
+    <string name="event_end_title">종료된 이벤트입니다</string>
+
+    <string name="deposit_bt_title">거래 내역</string>
+    <string name="deposit_bt_title_1">전체</string>
+    <string name="deposit_bt_title_2">조각 거래 내역</string>
+    <string name="deposit_bt_title_3">예치금 입출금 내역</string>
+
+    <string name="alarm_title">앗, 기기 알림이 꺼져 있어요!</string>
+    <string name="alarm_sub_title">주요 정보를 놓치지 않고 받아 보실 수 있어요.</string>
+    <string name="alarm_ok_btn_title">기기 알림 켜기</string>
+
+    <string name="alert_title">본인 확인 실패</string>
+    <string name="alert_title_1">다시 시도하기</string>
+
+    <string name="deposit_title">나의 예치금</string>
+
+    <string name="my_deposit_title">자산</string>
+    <string name="my_deposit_title_1">예치금</string>
+    <string name="my_deposit_title_2">출금계좌</string>
+    <string name="my_deposit_title_3">내 증권</string>
+
+    <string name="deposit_charge_title">예치금 충전하기</string>
+    <string name="deposit_withdraw_title">출금하기</string>
+
+    <string name="setting_text">설정</string>
+
+    <string name="grade_title">PIECE 종합등급이란?</string>
+    <string name="grade_title_1">운용기간이란?</string>
+
+    <string name="notice_setting_re_title_1">자산변동 및 주요 정보에 대한 내용을 알려 드려요.</string>
+    <string name="notice_setting_re_title_2">쿠폰, 이벤트 등 다양한 혜택을 알려 드려요.</string>
+
+
+    <string name="notice_setting_2_title_1">정보성 알림 수신</string>
+    <string name="notice_setting_2_title_2">광고성 알림 수신</string>
+
+    <string name="portfolio_title_txt">청약</string>
+
+    <string name="myinfo_title">내 정보</string>
+    <string name="myinfo_title_1">본인 확인 정보</string>
+    <string name="myinfo_title_2">이름</string>
+    <string name="myinfo_title_3">생년월일</string>
+    <string name="myinfo_title_4">휴대폰 번호</string>
+    <string name="myinfo_title_5">등록된 주소</string>
+    <string name="myinfo_title_6">등록된 이메일</string>
+    <string name="myinfo_title_7">등록된 이메일이 없어요.</string>
+
+
+    <string name="profit_title">분배금 정산 완료</string>
+    <string name="profit_title_1">수익 분배금이 김피스님을 기다리고 있어요! \n 실명인증을 하시면 예치금으로 입금해 드려요.</string>
+    <string name="profit_title_2">인증하고 분배금받기</string>
+
+    <string name="notice_title">이용안내</string>
+
+    <string name="purchase_confirm_title_1">포트폴리오</string>
+
+    <string name="login_chk_title">로그인이 필요한\n서비스예요</string>
+    <string name="login_chk_title_1">해당 서비스는 로그인후 이용 가능해요\n계정이 없다면 회원가입을 먼저 진행해 주세요.</string>
+    <string name="login_chk_title_2">로그인 / 회원가입</string>
+
+    <string name="change_title">비밀번호 변경 완료</string>
+    <string name="change_title_1">확인을 누르면 설정으로 이동해요.</string>
+
+    <string name="shared_title">공유하기 옵션</string>
+    <string name="shared_title_1">공유</string>
+    <string name="shared_title_2">링크 복사</string>
+    <string name="shared_title_3">북마크</string>
+    <string name="shared_title_4">게시물을 저장하거나, 공유해 보세요!</string>
+
+    <string name="charge_title">충전하실 금액</string>
+    <string name="charge_title_1">을 입력해주세요.</string>
+    <string name="charge_title_2">원</string>
+
+    <string name="charge_bt_1">1 만</string>
+    <string name="charge_bt_2">5 만</string>
+    <string name="charge_bt_3">10 만</string>
+    <string name="charge_bt_4">50 만</string>
+    <string name="charge_bt_5">100 만</string>
+
+
+    <string name="purchase_result_text">다시 시도해주세요.</string>
+
+    <string name="detail_address_title">상세 주소</string>
+    <string name="detail_address_title1">선택한 주소</string>
+    <string name="detail_address_title2">상세 주소를 입력해 주세요</string>
+
+    <string name="end_title">그동안 피스를 이용해 주셔서 \n 감사합니다</string>
+    <string name="end_title_1">더 좋은 서비스로 찾아뵐게요.</string>
+
+    <string name="delete_text_1">탈퇴하려는 이유를 알려 주시면 더 좋은 서비스로 찾아뵐게요.</string>
+    <string name="delete_text_2">사용하지 않는 앱이에요</string>
+    <string name="delete_text_3">수익률 회수기간이 너무 길어요</string>
+    <string name="delete_text_4">앱에 오류가 많아요</string>
+    <string name="delete_text_5">앱을 어떻게 쓰는지 모르겠어요</string>
+    <string name="delete_text_6">비슷한 서비스가 더 좋아요</string>
+    <string name="delete_text_7">기타</string>
+
+    <string name="purchase_btn_text_1">+ 1</string>
+    <string name="purchase_btn_text_5">+ 5</string>
+    <string name="purchase_btn_text_10">+ 10</string>
+    <string name="purchase_btn_text_50">+ 50</string>
+    <string name="purchase_btn_text_max">최대</string>
+
+    <string name="question_title">자주 묻는 질문</string>
+    <string name="question_title_1">무엇을 \n도와드릴까요?</string>
+    <string name="question_title_2">챗봇 상담을 이용하기 전에 \n원하는 답변을 더 빠르게 찾을 수 있어요</string>
+
+    <string name="bank_select_title">은행 선택</string>
+    <string name="bank_select_title_1">본인 명의의 계좌가 개설된 은행을 선택해 주세요.</string>
+
+    <string name="bank_name_1">KB국민은행</string>
+    <string name="bank_name_2">신한은행</string>
+    <string name="bank_name_3">하나은행</string>
+    <string name="bank_name_4">경남은행</string>
+    <string name="bank_name_5">광주은행</string>
+    <string name="bank_name_6">대구은행</string>
+    <string name="bank_name_7">부산은행</string>
+    <string name="bank_name_8">수협은행</string>
+    <string name="bank_name_9">우리은행</string>
+    <string name="bank_name_10">전북은행</string>
+    <string name="bank_name_11">제주은행</string>
+    <string name="bank_name_12">카카오뱅크</string>
+    <string name="bank_name_13">케이뱅크</string>
+    <string name="bank_name_14">토스뱅크</string>
+    <string name="bank_name_15">씨티은행</string>
+    <string name="bank_name_16">IBK기업은행</string>
+    <string name="bank_name_17">KDB산업은행</string>
+    <string name="bank_name_18">NH농협은행</string>
+    <string name="bank_name_19">SC제일은행</string>
+    <string name="bank_name_20">우체국은행</string>
+    <string name="bank_name_21">외환은행</string>
+    <string name="bank_name_22">신협은행</string>
+    <string name="bank_name_23">산림조합은행</string>
+    <string name="bank_name_24">새마을은행</string>
+
+    <string name="birth_error_text">유효하지 않은 생년월일이에요.</string>
+    <string name="name_error_text">유효하지 않은 이름이에요.</string>
+
+    <string name="delete_member_title2">탈퇴하기 전에 꼭 확인해주세요.</string>
+    <string name="delete_member_title3">· 피스에서 관리했던 회원님의 모든 개인정보를 다시 볼 수 없어요.</string>
+    <string name="delete_member_title4">· 소유한 조각, 개인정보 등 모든 정보가 삭제돼요.</string>
+    <string name="delete_member_title5">· 결제가 취소된 금액을 돌려받을 계좌가 필요해요.</string>
+    <string name="delete_member_title6">· 예치금을 다른 계좌로 옮겨 주세요.</string>
+    <string name="delete_member_title7">· 다양한 혜택과 이벤트 정보를 더 이상 받을 수 없어요.</string>
+    <string name="delete_member_title8">· 회원 탈퇴 시 30일간 재가입이 불가능해요.</string>
+    <string name="delete_member_title9">예치금 출금 신청하기</string>
+    <string name="delete_member_title10">내 증권 보러 가기</string>
+    <string name="delete_member_title11">위의 내용을 모두 확인하고 동의합니다.</string>
+    <string name="delete_member_title12">탈퇴</string>
+    <string name="delete_member_title13">취소</string>
+
+    <string name="error_page_title">알 수 없는 오류가\n 발생했어요</string>
+    <string name="error_page_title_1">잠시 후 다시 시도해 주세요.</string>
+    <string name="event_top_title">이벤트</string>
+
+    <string name="intro_title">세상에서 가장 값진 한 조각</string>
+    <string name="intro_title_1">조각투자의 표준, PIECE</string>
+    <string name="intro_title_2">PIECE 시작하기</string>
+
+    <string name="join_title">유효하지 않은 휴대폰 번호에요.</string>
+
+    <string name="myinfo_text">등록된 주소가 없어요.</string>
+
+    <string name="next_withdraw_title">출금 후 예치금 잔액</string>
+    <string name="next_withdraw_title_1">이 계좌로 입금돼요.</string>
+    <string name="next_withdraw_title_2">출금하기</string>
+
+    <string name="notice_title_1">공지사항</string>
+
+    <string name="face_title">다음부터 생체인증 사용</string>
+    <string name="face_title_retry">생체인증 다시 시도</string>
+
+    <string name="cancel_application_txt">신청 취소</string>
+
+    <!-- Refactoring -->
+    <string name="recruitment_completed_txt">투자자 모집이\n완료되었어요</string>
+
+    <!-- FragmentHome -->
+    <string name="pieces_left_txt">조각\n남았어요</string>
+    <string name="proceeds_paid_out_txt">수익금이\n지급되었어요</string>
+    <string name="portfolio_list_chart_title_txt">수익 리포트</string>
+    <string name="portfolio_list_chart_sub_title_txt">만기 상품 수익률 보기</string>
+
+    <!-- Portfolio Detail Activity -->
+    <string name="portfolio_detail_notice_title_txt">유의 사항</string>
+    <string name="portfolio_detail_notice_txt">• 금융투자상품은 대부분 원금 보장이 되지 않고 경우에 따라 예상 밖의 손실도 입을 수 있다는 사실을 꼭 기억해 주세요.\n• 상품의 진위 여부에 대한 충분한 검수와 검증은 당사에서 책임지고 있으며, 이용 약관에 따라 절차를 처리하고 있습니다.\n• 투자대상이 되는 상품은 별도의 시설에 보관되며 상품의 분실, 파손 발생 시 책임보험 한도 내에서 구매자들에게 보상할 수 있습니다.\n• 제3자에게 투자판단을 일임하는 경우도 결과에 대한 책임은 투자자 본인이 부담하게 된다는 점을 유념해 주세요.\n• 투자 상품 가입서류 등에 서명하면 내용을 이해한 것으로 추정될 수 있으니, 서류 내용을 꼼꼼히 읽고 이해한 후 서명하셔야 해요.\n• 계좌번호, 비밀번호 등 개인정보는 타인에게 알려주지 않도록 주의해 주세요.</string>
+    <string name="investment_risk_title_text">투자 위험 안내</string>
+
+    <string name="business_risk_text">사업위험</string>
+    <string name="business_risk_content_text">① 보관위험: 현물에 대한 소유 권리를 나누어 지분의 형태로 판매하는 형태의 사업 형태에 따라 현물 보관에 따른 기초자산에 손・망실, 분실 및 도난 등의 위험이 있을 수 있습니다.\n\n② 투자손실: 신종 증권인 투자계약 증권은 비정형 증권의 형태이므로 한국거래소의 상장되어 있는 것이 아니므로 이에 따른 증권의 환금성에 큰 제약과 회수금액에 대한 일부 또는 전부를 회수할 수 없는 위험이 있습니다.\n\n③ 법률규제: 자본시장과 금융투자업에 관한 법률 등 금융관련 법령의 개정 및 제정에 의해 증권의 형태나 사업의 일부가 영향을 받을 위험이 있습니다.</string>
+
+    <string name="company_risk_text">회사위험</string>
+    <string name="company_risk_content_text">① 재무위험: 회사의 운영 및 기술 개발을 위해 적절한 시기에 지속적이고 필요한 만큼의 자본 투입이 이루어지지 못할 경우 회사 운영에 위험 요소가 될 수 있습니다.\n\n② 매출위험: 초기 기업으로 정상적 매출이 발생하고 있지 않으며, 매출이 궤도에 오르기 전까지 일정 기간이 소요될 수 있습니다.\n\n③ 인적위험: 현재의 임직원으로 해당 업무의 수행이 가능하나 사업이 확장되어 가면서 금융 전문 인력 및 기술 개발 인력이 필요합니다.</string>
+
+    <string name="joint_venture_risk_text">공동사업위험</string>
+    <string name="joint_venture_risk_content_text">① 파트너의 신뢰성과 경험: 공동사업의 경우에는 파트너의 신뢰성과 경험이 매우 중요합니다. 파트너가 금융시장과 해당 산업에 대한 전문지식과 경험을 가지고 있는 경우에도 위험이 있을 수 있습니다.\n\n② 목표 및 투자전략의 일치: 공동사업의 파트너와 목표 및 투자전략이 일치하는 경우에도, 투자 기간, 리스크 허용 수준 등 다양한 변수에 의해 실제 성과와 차이가 발생할 수 있습니다.\n\n③ 재무상태와 신용도 평가: 사업 파트너의 재무상태와 신용도가 사업 성과에 큰 영향을 주게 됩니다. 꼼꼼하게 부채 비율 등의 재무상태와 신용평가 등을 검토하여 파트너를 선정하는 경우에도 위험이 있을 수 있습니다.</string>
+
+    <string name="operator_risk_text">운영자위험</string>
+    <string name="operator_risk_content_text">① 운영자의 전문성과 경험: 운영자의 전문성과 경험은 매우 중요합니다. 운영자가 금융시장에 대한 지식과 경험을 가지고 있는 경우에도 향후 유사한 구조를 성공적으로 운영할 수 있음을 보증할 수 없습니다.\n\n② 조직구조와 리소스: 해당 사업을 운영할 수 있는 조직 규모, 전문가와의 협업 등 충분한 리소스가 할당되어 있는지 확인하고 운영하는 경우에도, 실제 성과와 차이가 발생할 수 있습니다.\n\n③ 내부통제 및 거래 실행 절차: 운영자의 내부통제 및 거래 실행 절차를 검토해야 합니다. 운영자가 높은 수준의 내부통제 체계를 구축하고 거래 실행 절차를 준수하는 있는지에 따라 투자 성과의 차이와 위험이 발생할 수 있습니다.</string>
+
+    <string name="other_investment_risk_text">기타위험</string>
+    <string name="other_investment_risk_content_text">① 발행일정: 청약기간이 연장되거나 투자판단과 밀접하게 연관된 주요내용이 변경될 경우 명시된 일정이 변경될 가능성이 존재합니다.\n\n② 과세제도: 투자에 따른 손익에 대한 세금 부과 방법이나 기준은 정부의 정책적 판단 등에 의해 변경될 수 있으며, 투자자의 지위에 따라 각기 다른 과세기준이 적용될 수 있습니다. 따라서 과세한 관한 사항은 투자자 본인의 재산상태를 고려하시어 반드시 세무전문가의 조언 등 추가적인 확인을 권장합니다.\n\n③ 집중투자에 따른 위험: 소수 종목에 선별적으로 투자되어 해당 실물시장 전체의 위험 보다 상대적으로 클 수 있습니다.</string>
+    <string name="portfolio_detail_see_txt">포트폴리오 자세히 보기</string>
+
+    <string name="portfolio_purchase_verify_txt">청약 서비스 이용 불가</string>
+    <string name="portfolio_purchase_verify_content">만 19세 미만은 청약 서비스 이용이 불가해요.</string>
+
+    <!-- Portfolio Document Info Activity -->
+    <string name="portfolio_document_info_address_txt">보관위치</string>
+
+    <!-- Purchase Activity-->
+    <string name="piece_n_buy_txt">피스를 신청할게요</string>
+
+    <!-- Purchase Detail Activity-->
+    <string name="purchase_certificate_ownership_txt">기초자산 소유권 증명서</string>
+
+    <!-- Fragments-->
+
+    <!-- Disclosure Fragment -->
+    <string name="disclosure_title_txt">공시</string>
+    <string name="view_all_txt">모두보기</string>
+    <string name="disclosure_empty_txt">등록된 공시가 없어요</string>
+
+    <!-- Notice Detail Activity -->
+    <string name="k_bank_pause_txt">K-Bank 가상계좌 입금 서비스가 일시 중단됩니다.</string>
+    <string name="deposit_charge_stop_txt">예치금 충전 중단</string>
+
+    <!-- Deed Pdf Activity -->
+    <string name="no_registered_email_txt">등록된 이메일이 없어요</string>
+    <string name="register_email_content_txt">등록된 이메일로 소유권 증명서를 직접 받아보실 수 있어요</string>
+    <string name="register_email_deed_receive_content_txt">등록된 이메일로 소유증서를 직접 받아보실 수 있어요.</string>
+    <string name="email_txt">이메일 신청</string>
+    <string name="email_send_success_txt">이메일 신청 완료</string>
+    <string name="email_wait_time_content_txt">소유권 증명서를 이메일로 보내드릴게요.\n최대 1~5분의 시간이 소요될 수 있어요.</string>
+    <string name="email_send_fail_title_txt">이메일 신청 실패</string>
+    <string name="email_send_fail_content_txt">소유권 증명서를 전송하는데 실패했어요.</string>
+
+    <!-- 출금 신청하기 -->
+    <string name="deposit_account_none_txt">등록된 계좌가 없어요</string>
+    <string name="deposit_account_none_content_txt">지금 계좌를 등록할까요?</string>
+
+    <string name="deposit_detail_title_txt">충전계좌</string>
+    <string name="deposit_detail_not_account_txt">아직 발급되지 않았어요</string>
+    <string name="deposit_detail_account_txt">NH농협</string>
+    <string name="deposit_detail_account_register_txt">충전계좌 발급받기</string>
+    <string name="deposit_caution_title_txt_1">충전계좌에 충전하실 금액을 입금해주세요.\n계좌 번호를 복사하면 더 쉽게 입금할 수 있어요.</string>
+    <string name="deposit_caution_title_txt_2">입금 후 내 지갑에서 충전된 예치금을 확인하실 수 있어요.</string>
+    <string name="deposit_caution_title_txt_3">충전한 예치금이 확인되지 않을 경우 새로고침 해주세요.</string>
+
+    <string name="caution_sub_notice_text_txt_1">• 계좌 관리기관(NH농협)이 안전하게 예치금을 보관됩니다.</string>
+    <string name="caution_sub_notice_text_txt_2">• 이체 수단에 상관없이 모두 입금할 수 있습니다.</string>
+    <string name="caution_sub_notice_text_txt_3">• 예치금은 원화(KRW)로만 입금할 수 있습니다.</string>
+    <string name="caution_sub_notice_text_txt_4">• 금융사고 예방을 위해 입금한 금액은 3시간 동안 출금할 수 없습니다.</string>
+    <string name="caution_sub_notice_text_txt_5">• NH 점검 시간(00:00~00:35)에는 모든 은행 업무가 중단됩니다.</string>
+
+    <!-- 예치금 충전계좌 변경 안내 BottomSheet Dialog -->
+    <string name="nh_bt_sheet_title_txt">계좌 관리기관 변경 안내</string>
+    <string name="nh_bt_sheet_title_txt_2">출금계좌 재등록 안내</string>
+    <string name="nh_bt_sheet_page_1_title_txt">NH농협은행으로 가상계좌가 바뀌었어요.</string>
+    <string name="nh_bt_sheet_page_1_content_txt">계좌를 발급받으려면 먼저 연동이 필요해요.</string>
+    <string name="nh_bt_sheet_page_2_title_txt">출금계좌를 다시 등록해 주세요.</string>
+    <string name="nh_bt_sheet_page_2_content_txt">더 빠르게 예치금을 출금할 수 있어요.</string>
+    <string name="nh_bt_sheet_page_2_confirm_btn_txt">출금계좌 등록하기</string>
+    <string name="nh_bt_sheet_btn_txt">가상계좌 만들기</string>
+
+    <!-- 예치금 새로고침 snackBar -->
+    <string name="snack_refresh_title_txt">예치금 새로고침</string>
+
+    <!-- 충전계좌 발급 안내 Dialog -->
+    <string name="nh_charge_register_tag">출금계좌 등록</string>
+    <string name="nh_charge_register_confirm_title_txt">출금계좌 미등록</string>
+    <string name="nh_charge_register_confirm_content_txt">먼저 출금계좌 등록이 필요해요.</string>
+
+    <!-- 입금 안내 Dialog -->
+    <string name="nh_charge_bt_dlg_tag">입금 안내</string>
+    <string name="nh_charge_bt_dlg_title_txt">연동된 계좌에서\n 가상계좌로 입금해 주세요</string>
+    <string name="nh_charge_bt_dlg_basic_txt">연동계좌</string>
+    <string name="nh_charge_bt_dlg_btn_txt">입금했어요,예치금을 확인할게요</string>
+    <string name="nh_charge_bt_dlg_text_1">• 기존 케이뱅크 가상계좌로는 입금할 수 없어요.</string>
+    <string name="nh_charge_bt_dlg_text_2">• 오픈뱅킹 송금서비스로는 입금할 수 없어요.</string>
+    <string name="nh_charge_bt_dlg_text_3">• 시스템 상태에 따라 길게는 10분까지 지연될 수 있어요.</string>
+    <string name="nh_charge_bt_dlg_text_4">• 예치금은 원화(KRW)로만 입금할 수 있어요.</string>
+    <string name="nh_charge_bt_dlg_text_5">• 00:00부터 00:35까지는 입출금 업무가 중단돼요.</string>
+
+
+    <!-- 출금계좌 등록 완료 Dialog -->
+    <string name="nh_charge_register_success_tag">출금계좌 등록 완료</string>
+    <string name="withdraw_success_title_txt">출금계좌 등록 완료</string>
+    <string name="withdraw_success_content_txt">예치금을 충전하려면 충전계좌를 발급해 주세요.</string>
+    <string name="nh_charge_register_btn_txt">충전계좌 발급</string>
+
+    <!-- 충전계좌 발급 성공 Activity -->
+    <string name="nh_charge_account_success_txt">충전계좌가 발급되었어요.</string>
+    <string name="nh_charge_account_success_content_txt">이제 예치금을 충전할 수 있어요.</string>
+
+    <!-- 충전계좌 발급 실패 Dialog -->
+    <string name="nh_charge_fail_register_title_txt">가상계좌 발급 실패</string>
+    <string name="nh_charge_fail_register_content_txt">다시 시도해 주세요.</string>
+
+    <!-- 연동계좌 변경 실패 -->
+    <string name="bank_register_fail_title_txt">계좌 확인에 실패했어요.</string>
+    <string name="bank_register_fail_sub_title_txt">정보를 다시 확인해주세요.</string>
+
+    <!-- 예치금 충전하기 Type : 충전계좌 발급 성공 -->
+    <string name="nh_charge_account_success_btn_txt">예치금 확인하기</string>
+
+    <!-- **** Custom SnackBar Type -->
+    <!-- 계좌번호 복사 -->
+    <string name="custom_snackbar_type_bank_num_txt">계좌번호 복사</string>
+    <string name="bank_num_copy_txt">계좌번호가 복사되었어요.</string>
+
+    <!-- 나의 예치금 -->
+    <string name="custom_snackbar_type_refresh">예치금 정보 업데이트</string>
+    <string name="custom_snackbar_type_refresh_txt">예치금 정보가 업데이트 되었어요.</string>
+
+    <!-- 내 계좌로 출금하기 -->
+    <string name="alter_title_txt">입금한 금액은 3시간 동안 출금할 수 없어요.</string>
+
+    <!-- 새로고침 -->
+    <string name="nh_api_not_call">NH농협 서버가 응답하지 않아요.</string>
+    <string name="nh_deposit_refresh_txt">예치금 새로고침</string>
+
+
+    <!-- 거래내역 -->
+    <string name="deposit_history_title_txt">거래내역</string>
+    <string name="deposit_history_tab_1_txt">전체</string>
+    <string name="deposit_history_tab_2_txt">입금</string>
+    <string name="deposit_history_tab_3_txt">출금</string>
+    <string name="deposit_history_tab_4_txt">청약</string>
+
+    <!-- SecuritiesFragment -->
+    <string name="securities_section_title_txt">증권내용</string>
+    <string name="securities_one_year_title_txt">1년 후 만기되는\n투자계약증권이에요</string>
+    <string name="securities_one_year_sub_title_txt">※ 본 상품은 증권신고서 제출 면제 대상입니다.</string>
+    <string name="securities_item_one_tv">발행인</string>
+    <string name="securities_item_one_sub_tv">㈜바이셀스탠다드</string>
+    <string name="securities_item_two_tv">공모총액</string>
+    <string name="securities_item_three_tv">발행총수</string>
+    <string name="securities_item_four_tv">공모가액</string>
+    <string name="securities_item_five_tv">청약기간</string>
+    <string name="securities_item_six_tv">배정방법</string>
+    <string name="securities_item_six_sub_old_tv">선착순</string>
+    <string name="securities_item_six_sub_new_tv">비례배정</string>
+    <string name="securities_item_seven_tv">증거금율</string>
+    <string name="securities_item_seven_sub_tv">100% 납입</string>
+    <string name="securities_bottom_prod_txt">• 개인투자자 대상 상품이에요.</string>
+
+    <!-- AssetsFragment -->
+    <string name="assets_section_title_txt">자산구성</string>
+    <string name="percent_txt">%d%%</string>
+    <string name="talk_box_content_txt">눌러서 자세한 정보를 볼 수 있어요</string>
+
+    <!-- StoryFragment -->
+    <string name="story_title_txt">스토리</string>
+    <string name="story_invest_point_txt">투자 포인트를 요약해 드릴게요 👀</string>
+
+    <!-- BusinessFragment -->
+    <string name="business_section_title_txt">공동사업자</string>
+
+    <!-- MarketInfoFragment -->
+    <string name="market_info_section_title_txt">시장정보</string>
+    <string name="unit_txt">• 단위: 원</string>
+
+    <!-- DisclosureDataFragment-->
+    <string name="disclosure_section_title_txt">설명자료</string>
+
+    <!-- PortfolioGuideFragment-->
+    <string name="warning_item_content_text">투자에 신중을 기하여 주시기 바라며,\n핵심위험들에 대한 상세설명을 꼭 참고해 주세요.</string>
+
+    <!-- PortfolioDetailNewActivity-->
+    <string name="portfolio_detail_new_warning_one_text">• 투자자는 이 금융투자상품에 대하여 충분한 설명을 받을 권리가 있으며 투자계약서, 증권신고서, 청약안내문을 반드시 읽어 보시기 바랍니다.</string>
+    <string name="portfolio_detail_new_warning_two_text">• 증권신고서, 투자설명서상에 기재된 투자전략에 따른 투자목적 또는 성과목표가 반드시 실현된다는 보장은 없습니다.</string>
+    <string name="portfolio_detail_new_warning_three_text">• 신청하신 청약은 모집 기간 내 취소할 수 있으며, 모집 마감 이후 배정받은 증권에 대해서는 철회가 불가능합니다.</string>
+    <string name="portfolio_detail_new_warning_four_text">• 투자계약증권의 특성 상 기초자산이 처분되지 않는 경우 증권의 현금화가 어려울 수 있습니다.</string>
+    <string name="portfolio_detail_new_warning_five_text">• 현물 가격하락 등에 따라 원금의 일부 또는 모두가 손실할 가능성이 있으며, 그 손실은 모두 투자자에게 귀속됩니다.</string>
+    <string name="portfolio_detail_new_warning_six_text">• 이 금융투자상품은 예금자보호법에 따라 예금보험공사가 보호하지 않습니다.</string>
+    <string name="portfolio_detail_warning_text">• 투자자는 이 금융투자상품에 대하여 충분한 설명을 받을 권리가 있으며 투자계약서, 증권신고서, 청약안내문을 반드시 읽어 보시기 바랍니다.\n• 증권신고서, 투자설명서상에 기재된 투자전략에 따른 투자목적 또는 성과목표가 반드시 실현된다는 보장은 없습니다.\n• 신청하신 청약은 모집 기간 내 취소할 수 있으며, 모집 마감 이후 배정받은 증권에 대해서는 철회가 불가능합니다.\n• 투자계약증권의 특성 상 기초자산이 처분되지 않는 경우 증권의 현금화가 어려울 수 있습니다.\n• 현물 가격하락 등에 따라 원금의 일부 또는 모두가 손실할 가능성이 있으며, 그 손실은 모두 투자자에게 귀속됩니다.\n• 이 금융투자상품은 예금자보호법에 따라 예금보험공사가 보호하지 않습니다.</string>
+
+    <string name="open_alarm_success_text">오픈 알림 신청이 완료되었어요.</string>
+    <string name="open_alarm_cancel_text">오픈 알림 신청이 취소되었어요.</string>
+    <string name="alarm_popup_request_cancel_text">알림 신청 취소</string>
+    <string name="alarm_popup_request_cancel_content_text">취소하시면 오픈 알림을 받을 수 없어요.</string>
+
+    <!-- FaqTabActivity -->
+    <string name="faq_tab_title_text">투자계약증권 FAQ</string>
+
+    <!-- PortfolioDetailAssetActivity -->
+    <string name="object_info_check_txt">개체정보 확인하기</string>
+    <string name="insurance_check_txt">보험증권 확인하기</string>
+    <string name="map_product_keep_txt">이곳에서 안전하게\n관리·보관하고 있어요</string>
+
+    <!-- 청약 신청 - 투자 계약서 -->
+    <string name="scroll_btn_txt">맨 아래로 내리기</string>
+    <string name="scroll_btn_txt_next">내용을 읽고 이해했어요</string>
+    <string name="scroll_tooltip_txt">금융투자상품에 투자하려면 동의가 필요해요</string>
+    <string name="purchase_contract_txt">투자 계약서</string>
+    <string name="purchase_manual_txt">투자 설명서</string>
+
+    <!-- 청약 신청 화면 -->
+    <string name="purchase_piece_txt">남은 조각 %1$s피스</string>
+
+    <!-- 청약 신청 - 신청 내역 -->
+    <string name="notice_title_txt">투자계약증권 관련 <u>FAQ</u> 및 <u>설명자료</u>를 확인했어요</string>
+    <string name="purchase_confirm_txt">신청하기</string>
+
+    <!-- 청약 취소 -->
+    <string name="purchase_cancel_title_txt">청약신청 취소</string>
+    <string name="purchase_cancel_content_txt">취소하면 다시 신청했을 때\n당첨 결과가 달라질 수도 있어요.</string>
+    <string name="purchase_cancel_btn_close_txt">닫기</string>
+    <string name="purchase_cancel_btn_txt">신청취소</string>
+    <string name="purchase_cancel_btn_success_txt">확인</string>
+    <string name="purchase_cancel_success_title_txt">신청취소 완료</string>
+    <string name="purchase_cancel_success_content_txt">청약 신청이 취소되었어요.</string>
+
+
+    <!-- PortfolioObjectInfoActivity -->
+    <string name="object_info_title_txt">개체정보</string>
+
+    <!-- PortfolioObjectInfoActivity -->
+    <string name="object_info_notice_txt">축산물이력제 시스템을 통해 개체 이력이 제공됩니다.</string>
+
+    <!-- NewFragmentMagazine -->
+    <string name="tab_txt_1">전체</string>
+    <string name="tab_txt_2">포트폴리오</string>
+    <string name="tab_txt_3">핀테크 트렌드</string>
+    <string name="tab_txt_4">핫 플레이스</string>
+    <string name="tab_txt_5">쿨 피플</string>
+    <string name="tab_txt_6">잘알못 칼럼</string>
+
+    <!-- NewCertificationActivity -->
+    <string name="biometric_certification_registration_title_txt">생체인증 등록이 필요해요</string>
+    <string name="biometric_certification_registration_content_txt">생체인증 등록을 진행해 주세요</string>
+    <string name="biometric_certification_cancel_title_txt">생체인증 해제</string>
+    <string name="biometric_certification_cancel_content_txt">생체인증을 사용하지 않도록 설정할까요?</string>
+    <string name="biometric_certification_go_page_title_txt">피스 생체인증</string>
+    <string name="biometric_certification_go_page_content_txt">생체인증 등록이 필요합니다. 등록 설정화면으로 이동하시겠습니까?</string>
+
+    <!-- NewMyInfoActivity -->
+    <string name="my_info_logout_popup_content_txt">일부 메뉴는 이용하지 못할 수도 있어요.\n그래도 로그아웃할까요?</string>
+
+    <!-- NewNotificationSettingActivity -->
+    <string name="notification_setting_noti_txt">※ 꼭 알아야 하는 중요한 정보는 동의와 상관없이 알려 드려요.</string>
+
+    <!-- NewBookMarkActivity -->
+    <string name="book_mark_content_txt">아직 저장한 글이 없어요.\n가장 빠른 재테크 소식을 알아볼까요?</string>
+    <string name="book_mark_button_txt">매거진 둘러보기</string>
+
+    <!-- Email BDF -->
+    <string name="email_not_registered_txt">이메일 미등록</string>
+    <string name="email_register_certificate_mail_txt">이메일을 등록하고 소유권 증명서를 메일로 받아보세요.</string>
+    <string name="email_retouch_txt">이메일 수정</string>
+
+    <!-- 공시 -->
+    <string name="delete_underline"><u>전체 삭제</u></string>
+    <string name="dlg_title">최근 검색어 전체 삭제</string>
+    <string name="dlg_content">최근 검색어를 모두 삭제하시겠어요?</string>
+    <string name="dlg_cancel_txt">닫기</string>
+    <string name="dlg_delete_txt">삭제하기</string>
+
+    <!-- NewConsentActivity -->
+    <string name="select_agree_txt"><u>광고성 정보 활용 및 수신 동의</u></string>
+
+    <!-- DeleteMemberDetailActivity -->
+    <string name="delete_member_not_cancle_text">탈퇴 불가</string>
+    <string name="delete_member_cancle_text">탈퇴 취소</string>
+    <string name="delete_member_notice_text">예치금이나 내 증권이 남아 있는 경우 회원 탈퇴를 처리할 수 없어요.\n고객센터(<u>help@buysellstandards.com</u>)에 알려 주세요.</string>
+    <string name="delete_member_popup_notice_text">예치금이나 내 증권이 남아있는 경우 탈퇴가 불가능해요</string>
+
+</resources>

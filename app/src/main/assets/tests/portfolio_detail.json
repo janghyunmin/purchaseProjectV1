@@ -1,0 +1,134 @@
+{
+  "portfolioDetailDefault": {
+    "portfolioId": "77a33387-4691-485d-bb6d-c32b0986adc6",
+    "title": "테스트 99호입니다. ",
+    "subTitle": "피스 피스 피스 99호호호",
+    "representThumbnailImagePath": "https://cdn.piece.run/static/dev_image/ec325266-0fb2-4896-a47e-811803c108fe.png",
+    "recruitmentState": "PRS0101",
+    "recruitmentBeginDate": "2023-11-30 00:00:00.0",
+    "recruitmentEndDate": "2023-11-30 00:00:00.0",
+    "dividendsExpecatationDate": "2023-12-02",
+    "achieveProfitRate": "0",
+    "achievementRate": "14",
+    "prizeAt": "2023-11-30 00:00:00.0",
+    "offerMemberCount": null,
+    "shareUrl": "https://dev.piece.run/re/yfax7Axp",
+    "quantityLeft": null,
+    "notificationCount": "2"
+  },
+  "portfolioProductComposition": [
+    {
+      "productId": "d1634b35-a805-4d71-87db-4ed5889c2016",
+      "owner": "자산구분",
+      "title": "테스트 99",
+      "rate": "0"
+    }
+  ],
+  "portfolioStory": {
+    "storyId": "1805a6d3-a725-461d-9541-2f98faf445ae",
+    "sectionName": "ㅁㄴㅇㄹ",
+    "title": "ㅁㄴㅇㄹㅁㄴㅇㄹㅁㄴ",
+    "subTitle": "ㅁㄴㅇㄹㅁㄴㅇㄹㅁㄴㅇㄹ",
+    "contents": "<p>ㅁㄴㅇㄹㅁㄴㅇㄹ</p>",
+    "storyImagePath": "https://cdn.piece.run/static/dev_image/e5b35aba-f847-4223-af5f-829eabc00d7b.jpeg"
+  },
+  "portfolioJoinBiz": [
+    {
+      "bizName": "미확정 화랑, 아트페어, 국내 또는 국외 미술품 경매회사, 미확정 명품시계 마켓",
+      "bizThumbnailPath": "",
+      "bizId": "d766720e-6ce8-11ee-8b25-f220ef2e7bc1",
+      "bizSubName": "공동사업 참여자",
+      "portfolioJoinBizDetails": [
+        {
+          "seq": "1",
+          "title": " ",
+          "description": "기초자산의 매도"
+        }
+      ]
+    }
+  ],
+  "purchaseGuides": [
+    {
+      "guideId": "COM0101",
+      "guideName": "블루칩",
+      "description": null,
+      "guideIconPath": "https://cdn.piece.run/static/purchase_guide/common/bluechip_v2.png"
+    },
+    {
+      "guideId": "COM0104",
+      "guideName": "인기상승",
+      "description": null,
+      "guideIconPath": "https://cdn.piece.run/static/purchase_guide/common/rise_in_popularity_v2.png"
+    }
+  ],
+  "attachFile": [
+    {
+      "attachFileCode": "PAF0201",
+      "codeName": "증권신고서",
+      "attachFilePath": "https://cdn.piece.run/static/dev_image/31efa9e4-5f75-4477-9250-86a4760c34fd.pdf",
+      "displayOrder": 0
+    },
+    {
+      "attachFileCode": "PAF0202",
+      "codeName": "투자설명서",
+      "attachFilePath": "https://cdn.piece.run/static/dev_image/fec6f6fc-83fb-459b-872b-28b27df36679.pdf",
+      "displayOrder": 0
+    },
+    {
+      "attachFileCode": "PAF0203",
+      "codeName": "청약안내문",
+      "attachFilePath": "https://cdn.piece.run/static/dev_image/70a1bfd0-bd53-4c3d-a52f-0c5c76c113b7.pdf",
+      "displayOrder": 0
+    }
+  ],
+  "boards": [],
+  "portfolioStock": {
+    "faceValue": "20000",
+    "recruitmentAmount": "10000000",
+    "isStockPublish": "N",
+    "totalPiece": "500.0000",
+    "recruitmentBeginDate": "2023-11-30 00:00:00.0",
+    "recruitmentEndDate": "2023-11-30 00:00:00.0",
+    "stockOperatePeriod": "2개월 "
+  },
+  "portfolioMarketInfos": [
+    {
+      "priceInfoId": "51947a12-7dc0-4469-af49-1c100ad38e86",
+      "priceTitle": "테스트2",
+      "displayOrder": 1,
+      "marketPrices": [
+        {
+          "priceId": "4810b400-638c-4e66-827e-008fc109926f",
+          "pricePeriod": "2013",
+          "price": "123112312",
+          "displayOrder": 1
+        },
+        {
+          "priceId": "86909046-0d51-4581-b750-82712aa1e5a4",
+          "pricePeriod": "2014",
+          "price": "231233123",
+          "displayOrder": 2
+        },
+        {
+          "priceId": "14251013-d6e5-43c7-b31f-f62b9eafd263",
+          "pricePeriod": "2016",
+          "price": "123123231",
+          "displayOrder": 3
+        },
+        {
+          "priceId": "fe938f4f-06fe-4897-a962-814ff74f5fe6",
+          "pricePeriod": "2015",
+          "price": "123112323",
+          "displayOrder": 4
+        },
+        {
+          "priceId": "99d32792-a730-4c41-a51a-4ca6b38787f2",
+          "pricePeriod": "2012",
+          "price": "123123123",
+          "displayOrder": 5
+        }
+      ]
+    }
+  ],
+  "offerId": ""
+}
